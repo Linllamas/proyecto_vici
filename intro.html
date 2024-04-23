@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Inmobiliaria HeBo &#8212; My sample book</title>
+    <title>Inmobiliaria HeBo &#8212; Inmobiliaria HeBo</title>
   
   
   
@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -42,7 +42,7 @@
   <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
     <script src="_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="_static/copybutton.js?v=f281be69"></script>
@@ -57,11 +57,13 @@
     <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="EDA" href="notebooks.html" />
+    <link rel="next" title="Fuente de datos y variables" href="markdown-notebooks.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -152,8 +154,8 @@
       
     
     
-    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+    <img src="_static/logo.png" class="logo__image only-light" alt="Inmobiliaria HeBo - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Inmobiliaria HeBo - Home"/>`);</script>
   
   
 </a></div>
@@ -179,9 +181,13 @@
             </li>
         </ul>
         <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="markdown.html">Markdown Files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks.html">EDA</a></li>
-<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Fuente de datos y variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Limpieza de datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks1.html">Análisis de datos atípicos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks2.html">Análisis de datos nulos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebookeda.html">EDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebookmodels.html">Modelos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown.html">Resultados y conclusiones</a></li>
 </ul>
 
     </div>
@@ -354,9 +360,7 @@ document.write(`
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="fa-solid fa-list"></span>
-</label>
+
 </div></div>
       
     </div>
@@ -372,14 +376,6 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
-            <div>
-                <h2> Contents </h2>
-            </div>
-            <nav aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivo-del-proyecto">Objetivo del Proyecto</a></li>
-</ul>
-            </nav>
         </div>
     </div>
 </div>
@@ -391,16 +387,23 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="inmobiliaria-hebo">
 <h1>Inmobiliaria HeBo<a class="headerlink" href="#inmobiliaria-hebo" title="Link to this heading">#</a></h1>
-<p>Bienvenidos a la Inmobiliaria HeBo, donde nos especializamos en ayudar a nuestros clientes a encontrar el hogar de sus sueños y a tomar decisiones informadas en el mercado inmobiliario.</p>
-<section id="objetivo-del-proyecto">
-<h2>Objetivo del Proyecto<a class="headerlink" href="#objetivo-del-proyecto" title="Link to this heading">#</a></h2>
-<p>El objetivo de este proyecto es analizar las casas que actualmente se están vendiendo en el mercado para crear una herramienta que ayude tanto a nuestros clientes como a nosotros a predecir el valor de un inmueble sin la necesidad de realizar análisis de mercado convencionales. Nos enfocaremos en los inmuebles de las principales ciudades de Colombia para brindar una visión amplia y precisa del sector.</p>
+<p>Bienvenido a HEBO Inmobiliaria, tu destino confiable para encontrar la casa de tus sueños en Colombia.</p>
+<p>En HEBO, estamos comprometidos a brindarte una experiencia inmobiliaria única y sin complicaciones.</p>
+<p>Nuestra última iniciativa, una aplicación innovadora, busca revolucionar la forma en que buscas y vendes propiedades en todo el país. Esta aplicación no solo te permite explorar una amplia gama de viviendas en venta en diferentes ciudades colombianas, sino que también te ofrece la oportunidad de vender tu propia propiedad de manera eficiente. Con la integración de diversos modelos de machine learning, nuestra aplicación proporcionaestimaciones precisas del precio de venta ayudándote a tomar decisiones informadas.</p>
+<p>Desde casas amplias hasta apartamentos modernos, nuestro extenso conjunto de datos incluye una variedad de variables clave, como ubicación geográfica, características de la propiedad y precios actualizados. ¡Únete a nosotros en esta emocionante aventura y encuentra el lugar perfecto para llamar hogar en Colombia!</p>
+<p><strong>Link</strong></p>
+<p><strong>Link</strong></p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="notebooks.html">EDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Fuente de datos y variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Limpieza de datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks1.html">Análisis de datos atípicos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks2.html">Análisis de datos nulos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebookeda.html">EDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebookmodels.html">Modelos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown.html">Resultados y conclusiones</a></li>
 </ul>
 </div>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -434,11 +437,11 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="right-next"
-       href="notebooks.html"
+       href="markdown-notebooks.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">EDA</p>
+        <p class="prev-next-title">Fuente de datos y variables</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -449,20 +452,7 @@ document.write(`
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
-
-
-  <div class="sidebar-secondary-item">
-  <div class="page-toc tocsection onthispage">
-    <i class="fa-solid fa-list"></i> Contents
-  </div>
-  <nav class="bd-toc-nav page-toc">
-    <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objetivo-del-proyecto">Objetivo del Proyecto</a></li>
-</ul>
-  </nav></div>
-
-</div></div>
+                <div class="bd-sidebar-secondary bd-toc"></div>
               
             
           </div>
@@ -473,7 +463,7 @@ document.write(`
   <div class="footer-item">
     
 <p class="component-author">
-By The Jupyter Book Community
+By Buvoli Gina - Herrera Linda
 </p>
 
   </div>

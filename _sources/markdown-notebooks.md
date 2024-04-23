@@ -12,42 +12,25 @@ kernelspec:
   name: python3
 ---
 
-# Notebooks with MyST Markdown
+# Fuente de datos y variables
 
-Jupyter Book also lets you write text-based notebooks using MyST Markdown.
-See [the Notebooks with MyST Markdown documentation](https://jupyterbook.org/file-types/myst-notebooks.html) for more detailed instructions.
-This page shows off a notebook written in MyST Markdown.
+Los datos utilizados en nuestra aplicación fueron obtenidos de Kaggle, específicamente del conjunto de datos titulado "Data of properties for sale in Colombia from 2021". Este conjunto de datos, disponible en [este enlace](https://www.kaggle.com/datasets/angeloftechml/data-of-properties-for-sale-in-colombia-from-2021), fue recopilado mediante técnicas de scraping de las páginas web de **MetroCuadrado** y **Finca Raíz**, dos de los principales portales inmobiliarios en Colombia. Esta fuente ofrece una amplia variedad de información sobre propiedades en venta en Colombia, incluyendo detalles como ubicación geográfica, características de la propiedad y precios actualizados.
 
-## An example cell
-
-With MyST Markdown, you can define code cells with a directive like so:
-
-```{code-cell}
-print(2 + 2)
-```
-
-When your book is built, the contents of any `{code-cell}` blocks will be
-executed with your default Jupyter kernel, and their outputs will be displayed
-in-line with the rest of your content.
-
-```{seealso}
-Jupyter Book uses [Jupytext](https://jupytext.readthedocs.io/en/latest/) to convert text-based files to notebooks, and can support [many other text-based notebook files](https://jupyterbook.org/file-types/jupytext.html).
-```
-
-## Create a notebook with MyST Markdown
-
-MyST Markdown notebooks are defined by two things:
-
-1. YAML metadata that is needed to understand if / how it should convert text files to notebooks (including information about the kernel needed).
-   See the YAML at the top of this page for example.
-2. The presence of `{code-cell}` directives, which will be executed with your book.
-
-That's all that is needed to get started!
-
-## Quickly add YAML metadata for MyST Notebooks
-
-If you have a markdown file and you'd like to quickly add YAML metadata to it, so that Jupyter Book will treat it as a MyST Markdown Notebook, run the following command:
-
-```
-jupyter-book myst init path/to/markdownfile.md
-```
+## Variables
+- **lat**: Latitud geográfica de la ubicación de la propiedad.
+- **long**: Longitud geográfica de la ubicación de la propiedad.
+- **category**: Categoría de la propiedad (casa, apartamento, apartaestudio).
+- **price**: Precio de venta de la propiedad en pesos colombianos.
+- **rooms**: Número de habitaciones en la propiedad.
+- **baths**: Número de baños en la propiedad.
+- **park**: Número de espacios de estacionamiento disponibles.
+- **ciudad**: Ciudad donde se encuentra la propiedad.
+- **barrio**: Barrio o sector donde se encuentra la propiedad.
+- **area_privada**: Área privada de la propiedad en metros cuadrados.
+- **area_const**: Área construida de la propiedad en metros cuadrados.
+- **admon**: Valor de la administración (cuota de mantenimiento) en pesos colombianos.
+- **Estrato**: Estrato socioeconómico de la propiedad.
+- **Estado**: Estado físico de la propiedad (Bueno, Excelente, Regular).
+- **Antiguedad**: Rango de antigüedad de la propiedad.
+- **Tipo de Apartamento**: Tipo de apartamento (Loft, Duplex, Penthouse).
+- **Sector**: Sector específico donde se encuentra la propiedad.

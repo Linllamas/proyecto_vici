@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Markdown Files &#8212; My sample book</title>
+    <title>Resultados y conclusiones &#8212; Inmobiliaria HeBo</title>
   
   
   
@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
@@ -42,7 +42,7 @@
   <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
     <script src="_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="_static/copybutton.js?v=f281be69"></script>
@@ -61,6 +61,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Modelos" href="notebookmodels.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -122,8 +123,6 @@
       
       
       
-        
-      
       <div class="bd-sidebar-primary bd-sidebar">
         
 
@@ -151,8 +150,8 @@
       
     
     
-    <img src="_static/logo.png" class="logo__image only-light" alt="My sample book - Home"/>
-    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="My sample book - Home"/>`);</script>
+    <img src="_static/logo.png" class="logo__image only-light" alt="Inmobiliaria HeBo - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Inmobiliaria HeBo - Home"/>`);</script>
   
   
 </a></div>
@@ -178,9 +177,13 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Markdown Files</a></li>
-<li class="toctree-l1"><a class="reference internal" href="notebooks.html">EDA</a></li>
-<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Notebooks with MyST Markdown</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Fuente de datos y variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Limpieza de datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks1.html">Análisis de datos atípicos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks2.html">Análisis de datos nulos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebookeda.html">EDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebookmodels.html">Modelos</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Resultados y conclusiones</a></li>
 </ul>
 
     </div>
@@ -366,7 +369,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Markdown Files</h1>
+    <h1>Resultados y conclusiones</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -376,10 +379,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-myst">What is MyST?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sample-roles-and-directives">Sample Roles and Directives</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#citations">Citations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learn-more">Learn more</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limpieza-y-preprocesamiento-de-datos">Limpieza y Preprocesamiento de Datos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelado-predictivo-y-resultados">Modelado Predictivo y Resultados</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#utilidad-para-inmobiliarias-y-compradores-vendedores">Utilidad para Inmobiliarias y Compradores/Vendedores</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusión</a></li>
 </ul>
             </nav>
         </div>
@@ -391,59 +394,31 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="markdown-files">
-<h1>Markdown Files<a class="headerlink" href="#markdown-files" title="Link to this heading">#</a></h1>
-<p>Whether you write your book’s content in Jupyter Notebooks (<code class="docutils literal notranslate"><span class="pre">.ipynb</span></code>) or
-in regular markdown files (<code class="docutils literal notranslate"><span class="pre">.md</span></code>), you’ll write in the same flavor of markdown
-called <strong>MyST Markdown</strong>.
-This is a simple file to help you get started and show off some syntax.</p>
-<section id="what-is-myst">
-<h2>What is MyST?<a class="headerlink" href="#what-is-myst" title="Link to this heading">#</a></h2>
-<p>MyST stands for “Markedly Structured Text”. It
-is a slight variation on a flavor of markdown called “CommonMark” markdown,
-with small syntax extensions to allow you to write <strong>roles</strong> and <strong>directives</strong>
-in the Sphinx ecosystem.</p>
-<p>For more about MyST, see <a class="reference external" href="https://jupyterbook.org/content/myst.html">the MyST Markdown Overview</a>.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="resultados-y-conclusiones">
+<h1>Resultados y conclusiones<a class="headerlink" href="#resultados-y-conclusiones" title="Link to this heading">#</a></h1>
+<p>A lo largo del análisis y modelado de datos de inmuebles, se llevaron a cabo diversas etapas de limpieza y preprocesamiento para asegurar la calidad y precisión de los modelos predictivos.</p>
+<section id="limpieza-y-preprocesamiento-de-datos">
+<h2>Limpieza y Preprocesamiento de Datos<a class="headerlink" href="#limpieza-y-preprocesamiento-de-datos" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Identificación y Corrección de Atípicos</strong>: Se emplearon métodos robustos como las pruebas de Rosner, IQR y Z-score para identificar y manejar valores atípicos en características críticas como el precio, la superficie y la ubicación, marcándolos como nulos o ajustándolos según los límites razonables de cada ciudad.</p></li>
+<li><p><strong>Imputación de Datos Nulos</strong>: La imputación fue un desafío notable, especialmente debido a la complejidad de los datos de localización (latitud y longitud) y las características inherentes de los inmuebles como área construida y número de habitaciones. Se utilizaron técnicas avanzadas como IterativeImputer y modelos KNN para imputar estos datos, asegurando que los modelos predictivos funcionaran con conjuntos de datos completos.</p></li>
+<li><p><strong>Limpieza de Datos por Ciudad</strong>: Se definieron y aplicaron límites específicos de latitud y longitud para cada ciudad para asegurar que las ubicaciones de los inmuebles fueran precisas, eliminando registros que se encontraban fuera de estos rangos permitidos.</p></li>
+</ul>
 </section>
-<section id="sample-roles-and-directives">
-<h2>Sample Roles and Directives<a class="headerlink" href="#sample-roles-and-directives" title="Link to this heading">#</a></h2>
-<p>Roles and directives are two of the most powerful tools in Jupyter Book. They
-are like functions, but written in a markup language. They both
-serve a similar purpose, but <strong>roles are written in one line</strong>, whereas
-<strong>directives span many lines</strong>. They both accept different kinds of inputs,
-and what they do with those inputs depends on the specific role or directive
-that is being called.</p>
-<p>Here is a “note” directive:</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Here is a note</p>
-</div>
-<p>It will be rendered in a special box when you build your book.</p>
-<p>Here is an inline directive to refer to a document: <a class="reference internal" href="markdown-notebooks.html"><span class="doc">Notebooks with MyST Markdown</span></a>.</p>
+<section id="modelado-predictivo-y-resultados">
+<h2>Modelado Predictivo y Resultados<a class="headerlink" href="#modelado-predictivo-y-resultados" title="Link to this heading">#</a></h2>
+<p>Los modelos evaluados incluyeron Ridge, Lasso, XGBoost y MLP, mostrando una variedad en desempeño que culminó en una destacada actuación del modelo XGBoost, que presentó el menor MAPE y el RMSE más bajo, junto con el más alto valor de R², indicando una excelente capacidad predictiva respecto al precio de los inmuebles en comparación con los demás modelos.</p>
 </section>
-<section id="citations">
-<h2>Citations<a class="headerlink" href="#citations" title="Link to this heading">#</a></h2>
-<p>You can also cite references that are stored in a <code class="docutils literal notranslate"><span class="pre">bibtex</span></code> file. For example,
-the following syntax: <code class="docutils literal notranslate"><span class="pre">{cite}`holdgraf_evidence_2014`</span></code> will render like
-this: <span id="id1">[<a class="reference internal" href="#id3" title="Christopher Ramsay Holdgraf, Wendy de Heer, Brian N. Pasley, and Robert T. Knight. Evidence for Predictive Coding in Human Auditory Cortex. In International Conference on Cognitive Neuroscience. Brisbane, Australia, Australia, 2014. Frontiers in Neuroscience.">HdHPK14</a>]</span>.</p>
-<p>Moreover, you can insert a bibliography into your page with this syntax:
-The <code class="docutils literal notranslate"><span class="pre">{bibliography}</span></code> directive must be used for all the <code class="docutils literal notranslate"><span class="pre">{cite}</span></code> roles to
-render properly.
-For example, if the references for your book are stored in <code class="docutils literal notranslate"><span class="pre">references.bib</span></code>,
-then the bibliography is inserted with:</p>
-<div class="docutils container" id="id2">
-<div role="list" class="citation-list">
-<div class="citation" id="id3" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">HdHPK14</a><span class="fn-bracket">]</span></span>
-<p>Christopher Ramsay Holdgraf, Wendy de Heer, Brian N. Pasley, and Robert T. Knight. Evidence for Predictive Coding in Human Auditory Cortex. In <em>International Conference on Cognitive Neuroscience</em>. Brisbane, Australia, Australia, 2014. Frontiers in Neuroscience.</p>
-</div>
-</div>
-</div>
+<section id="utilidad-para-inmobiliarias-y-compradores-vendedores">
+<h2>Utilidad para Inmobiliarias y Compradores/Vendedores<a class="headerlink" href="#utilidad-para-inmobiliarias-y-compradores-vendedores" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Inmobiliarias</strong>: El uso de estos modelos puede ayudar a las inmobiliarias a establecer precios precisos y competitivos en el mercado, optimizar sus estrategias de inventario según las predicciones de áreas de alta demanda y mejorar la satisfacción del cliente al proporcionar estimaciones precisas y personalizadas.</p></li>
+<li><p><strong>Compradores y Vendedores</strong>: Los modelos pueden ofrecer a los compradores una herramienta para verificar si los precios de los inmuebles están en línea con el mercado, ayudándoles a tomar decisiones informadas. Para los vendedores, proporciona una base para establecer precios de venta que maximicen sus posibilidades de transacción favorablemente y en tiempos óptimos.</p></li>
+</ul>
 </section>
-<section id="learn-more">
-<h2>Learn more<a class="headerlink" href="#learn-more" title="Link to this heading">#</a></h2>
-<p>This is just a simple starter to get you started.
-You can learn a lot more at <a class="reference external" href="https://jupyterbook.org">jupyterbook.org</a>.</p>
+<section id="conclusion">
+<h2>Conclusión<a class="headerlink" href="#conclusion" title="Link to this heading">#</a></h2>
+<p>El proceso detallado de limpieza y modelado de datos no solo mejoró la calidad de los datos con los que trabajaron los modelos predictivos, sino que también demostró la importancia de una buena práctica de gestión de datos en el ámbito inmobiliario. El modelo XGBoost, en particular, demostró ser excepcionalmente efectivo, destacando su utilidad en aplicaciones inmobiliarias tanto para análisis de mercado como para toma de decisiones estratégicas. Esta metodología ofrece un enfoque replicable y escalable que puede adaptarse a diferentes mercados y necesidades de datos, lo que es crucial en un sector tan dinámico como el inmobiliario.</p>
 </section>
 </section>
 
@@ -477,6 +452,15 @@ You can learn a lot more at <a class="reference external" href="https://jupyterb
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
+    <a class="left-prev"
+       href="notebookmodels.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Modelos</p>
+      </div>
+    </a>
 </div>
                 </footer>
               
@@ -493,10 +477,10 @@ You can learn a lot more at <a class="reference external" href="https://jupyterb
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-myst">What is MyST?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sample-roles-and-directives">Sample Roles and Directives</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#citations">Citations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#learn-more">Learn more</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#limpieza-y-preprocesamiento-de-datos">Limpieza y Preprocesamiento de Datos</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelado-predictivo-y-resultados">Modelado Predictivo y Resultados</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#utilidad-para-inmobiliarias-y-compradores-vendedores">Utilidad para Inmobiliarias y Compradores/Vendedores</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conclusion">Conclusión</a></li>
 </ul>
   </nav></div>
 
@@ -511,7 +495,7 @@ You can learn a lot more at <a class="reference external" href="https://jupyterb
   <div class="footer-item">
     
 <p class="component-author">
-By The Jupyter Book Community
+By Buvoli Gina - Herrera Linda
 </p>
 
   </div>

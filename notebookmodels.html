@@ -1,0 +1,1720 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Modelos &#8212; Inmobiliaria HeBo</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebookmodels';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Resultados y conclusiones" href="markdown.html" />
+    <link rel="prev" title="EDA" href="notebookeda.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Inmobiliaria HeBo - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Inmobiliaria HeBo - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Inmobiliaria HeBo
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Fuente de datos y variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Limpieza de datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks1.html">Análisis de datos atípicos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks2.html">Análisis de datos nulos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebookeda.html">EDA</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Modelos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown.html">Resultados y conclusiones</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/Linllamas/proyecto_vici" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/Linllamas/proyecto_vici/issues/new?title=Issue%20on%20page%20%2Fnotebookmodels.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/notebookmodels.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Modelos</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocesamiento">Preprocesamiento</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-ridge">Modelo Ridge</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-lasso">Modelo Lasso</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-xgboots">Modelo XGBoots</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-mlp">Modelo MLP</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resultados">Resultados</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mejor-modelo-basado-en-la-metrica-rmse">Mejor modelo basado en la métrica RMSE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mejor-modelo-basado-en-la-metrica-r-2">Mejor modelo basado en la métrica <span class="math notranslate nohighlight">\(R^2\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grafica-de-metricas">Gráfica de métricas</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="modelos">
+<h1>Modelos<a class="headerlink" href="#modelos" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Librerias</span>
+
+<span class="kn">import</span> <span class="nn">warnings</span>
+<span class="n">warnings</span><span class="o">.</span><span class="n">filterwarnings</span><span class="p">(</span><span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="nn">go</span>
+<span class="kn">import</span> <span class="nn">plotly.figure_factory</span> <span class="k">as</span> <span class="nn">ff</span>
+<span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
+
+<span class="c1"># Librerias para modelos</span>
+
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="kn">import</span> <span class="n">Pipeline</span>
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">GridSearchCV</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_absolute_percentage_error</span><span class="p">,</span> <span class="n">mean_squared_error</span><span class="p">,</span> <span class="n">r2_score</span><span class="p">,</span> <span class="n">make_scorer</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">Ridge</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">Lasso</span>
+<span class="kn">from</span> <span class="nn">xgboost</span> <span class="kn">import</span> <span class="n">XGBRegressor</span>
+<span class="kn">from</span> <span class="nn">sklearn.neural_network</span> <span class="kn">import</span> <span class="n">MLPRegressor</span>
+<span class="kn">import</span> <span class="nn">joblib</span>
+
+<span class="kn">from</span> <span class="nn">sklearn.compose</span> <span class="kn">import</span> <span class="n">ColumnTransformer</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">OneHotEncoder</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Definir la paleta de colores personalizada</span>
+<span class="n">custom_colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;#1F3040&#39;</span><span class="p">,</span> <span class="s1">&#39;#B9CDCA&#39;</span><span class="p">,</span> <span class="s1">&#39;#F2C6AC&#39;</span><span class="p">,</span> <span class="s1">&#39;#D99982&#39;</span><span class="p">,</span> <span class="s1">&#39;#735749&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Cargar datos</span>
+<span class="n">ventas</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;C:/UNINORTE/VC/Proyecto2/Archivos_Finales/datosventas.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ventas</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span><span class="o">.</span><span class="n">T</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>count</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>50%</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>lat</th>
+      <td>155105.0</td>
+      <td>5.652091e+00</td>
+      <td>2.204566e+00</td>
+      <td>3.254000e+00</td>
+      <td>4.648077e+00</td>
+      <td>4.721532e+00</td>
+      <td>6.210060e+00</td>
+      <td>1.104366e+01</td>
+    </tr>
+    <tr>
+      <th>long</th>
+      <td>155105.0</td>
+      <td>-7.487562e+01</td>
+      <td>8.883420e-01</td>
+      <td>-7.657500e+01</td>
+      <td>-7.557198e+01</td>
+      <td>-7.420027e+01</td>
+      <td>-7.406731e+01</td>
+      <td>-7.396190e+01</td>
+    </tr>
+    <tr>
+      <th>price</th>
+      <td>155105.0</td>
+      <td>4.984872e+08</td>
+      <td>4.051956e+08</td>
+      <td>2.000000e+06</td>
+      <td>2.400000e+08</td>
+      <td>3.750000e+08</td>
+      <td>6.000000e+08</td>
+      <td>4.900000e+09</td>
+    </tr>
+    <tr>
+      <th>rooms</th>
+      <td>155105.0</td>
+      <td>3.003527e+00</td>
+      <td>1.033709e+00</td>
+      <td>1.000000e+00</td>
+      <td>2.000000e+00</td>
+      <td>3.000000e+00</td>
+      <td>3.000000e+00</td>
+      <td>7.000000e+00</td>
+    </tr>
+    <tr>
+      <th>baths</th>
+      <td>155105.0</td>
+      <td>2.559737e+00</td>
+      <td>1.121071e+00</td>
+      <td>0.000000e+00</td>
+      <td>2.000000e+00</td>
+      <td>2.000000e+00</td>
+      <td>3.000000e+00</td>
+      <td>7.000000e+00</td>
+    </tr>
+    <tr>
+      <th>park</th>
+      <td>155105.0</td>
+      <td>1.182457e+00</td>
+      <td>9.385399e-01</td>
+      <td>0.000000e+00</td>
+      <td>1.000000e+00</td>
+      <td>1.000000e+00</td>
+      <td>2.000000e+00</td>
+      <td>5.000000e+00</td>
+    </tr>
+    <tr>
+      <th>area_privada</th>
+      <td>155105.0</td>
+      <td>1.114881e+02</td>
+      <td>6.199171e+01</td>
+      <td>1.000000e+00</td>
+      <td>6.500000e+01</td>
+      <td>9.400000e+01</td>
+      <td>1.390000e+02</td>
+      <td>3.250000e+02</td>
+    </tr>
+    <tr>
+      <th>area_const</th>
+      <td>155105.0</td>
+      <td>1.139092e+02</td>
+      <td>6.337710e+01</td>
+      <td>1.000000e+00</td>
+      <td>6.600000e+01</td>
+      <td>9.600000e+01</td>
+      <td>1.440000e+02</td>
+      <td>3.319651e+02</td>
+    </tr>
+    <tr>
+      <th>admon</th>
+      <td>155105.0</td>
+      <td>3.498544e+05</td>
+      <td>2.571560e+05</td>
+      <td>0.000000e+00</td>
+      <td>1.600000e+05</td>
+      <td>2.840000e+05</td>
+      <td>4.790000e+05</td>
+      <td>2.118338e+06</td>
+    </tr>
+    <tr>
+      <th>Estrato</th>
+      <td>155105.0</td>
+      <td>4.101970e+00</td>
+      <td>9.879393e-01</td>
+      <td>1.000000e+00</td>
+      <td>3.000000e+00</td>
+      <td>4.000000e+00</td>
+      <td>5.000000e+00</td>
+      <td>6.000000e+00</td>
+    </tr>
+    <tr>
+      <th>Piso No</th>
+      <td>112509.0</td>
+      <td>3.753531e+00</td>
+      <td>3.098129e+00</td>
+      <td>1.000000e+00</td>
+      <td>1.000000e+00</td>
+      <td>3.000000e+00</td>
+      <td>5.000000e+00</td>
+      <td>1.600000e+01</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ventas</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>lat</th>
+      <th>long</th>
+      <th>category</th>
+      <th>price</th>
+      <th>rooms</th>
+      <th>baths</th>
+      <th>park</th>
+      <th>ciudad</th>
+      <th>barrio</th>
+      <th>area_privada</th>
+      <th>area_const</th>
+      <th>admon</th>
+      <th>Estrato</th>
+      <th>Estado</th>
+      <th>Antiguedad</th>
+      <th>Piso No</th>
+      <th>Tipo de Apartamento</th>
+      <th>Sector</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>3.377575</td>
+      <td>-76.523969</td>
+      <td>Apartamento</td>
+      <td>197000000.0</td>
+      <td>2</td>
+      <td>2</td>
+      <td>1</td>
+      <td>Cali</td>
+      <td>Ciudad Bochalema</td>
+      <td>64.0</td>
+      <td>64.0</td>
+      <td>178000.000000</td>
+      <td>4</td>
+      <td>No Especificado</td>
+      <td>1 a 8 años</td>
+      <td>NaN</td>
+      <td>No Especificado</td>
+      <td>Ciudad Bochalema</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4.563951</td>
+      <td>-74.107534</td>
+      <td>Apartaestudio</td>
+      <td>70000000.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>0</td>
+      <td>Bogotá</td>
+      <td>Las Lomas</td>
+      <td>30.0</td>
+      <td>30.0</td>
+      <td>45000.000000</td>
+      <td>2</td>
+      <td>No Especificado</td>
+      <td>16 a 30 años</td>
+      <td>NaN</td>
+      <td>No Especificado</td>
+      <td>Las Lomas</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>6.264103</td>
+      <td>-75.603076</td>
+      <td>Apartamento</td>
+      <td>235000000.0</td>
+      <td>3</td>
+      <td>2</td>
+      <td>1</td>
+      <td>Medellín</td>
+      <td>Calasanz Occidente</td>
+      <td>56.0</td>
+      <td>56.0</td>
+      <td>192139.000000</td>
+      <td>3</td>
+      <td>No Especificado</td>
+      <td>No Especificado</td>
+      <td>13.0</td>
+      <td>No Especificado</td>
+      <td>No Especificado</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>10.993099</td>
+      <td>-74.817276</td>
+      <td>Apartaestudio</td>
+      <td>139000000.0</td>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td>Barranquilla</td>
+      <td>Ciudad Jardín</td>
+      <td>43.0</td>
+      <td>43.0</td>
+      <td>145000.000000</td>
+      <td>4</td>
+      <td>No Especificado</td>
+      <td>No Especificado</td>
+      <td>4.0</td>
+      <td>No Especificado</td>
+      <td>No Especificado</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>6.248413</td>
+      <td>-75.563910</td>
+      <td>Apartamento</td>
+      <td>260000000.0</td>
+      <td>4</td>
+      <td>2</td>
+      <td>0</td>
+      <td>Medellín</td>
+      <td>Centro</td>
+      <td>115.0</td>
+      <td>115.0</td>
+      <td>177878.235981</td>
+      <td>4</td>
+      <td>4.0</td>
+      <td>9 a 15 años</td>
+      <td>3.0</td>
+      <td>No Especificado</td>
+      <td>Centro</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Seleccionar columnas numericas</span>
+<span class="n">columnas_numericas</span> <span class="o">=</span> <span class="n">ventas</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;int&#39;</span><span class="p">,</span> <span class="s1">&#39;float&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">columns</span>
+
+<span class="c1"># Guardar los nombres de las columnas numericas en una lista</span>
+<span class="n">nombre_columna_numericas</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">columnas_numericas</span> <span class="p">)</span>
+
+<span class="c1"># Calcular la matriz de correlación</span>
+<span class="n">corr_matrix</span> <span class="o">=</span> <span class="n">ventas</span><span class="p">[</span><span class="n">nombre_columna_numericas</span><span class="p">]</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+
+<span class="c1"># Crear el gráfico de la matriz de correlación</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">ff</span><span class="o">.</span><span class="n">create_annotated_heatmap</span><span class="p">(</span>
+    <span class="n">z</span><span class="o">=</span><span class="n">corr_matrix</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">(),</span>
+    <span class="n">x</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">corr_matrix</span><span class="o">.</span><span class="n">columns</span><span class="p">),</span>
+    <span class="n">y</span><span class="o">=</span><span class="nb">list</span><span class="p">(</span><span class="n">corr_matrix</span><span class="o">.</span><span class="n">index</span><span class="p">),</span>
+    <span class="n">annotation_text</span><span class="o">=</span><span class="n">corr_matrix</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">to_numpy</span><span class="p">(),</span>
+    <span class="n">showscale</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">colorscale</span><span class="o">=</span><span class="n">custom_colors</span>
+<span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Matriz de Correlación&#39;</span><span class="p">,</span> <span class="n">xaxis_title</span><span class="o">=</span><span class="s1">&#39;Variables&#39;</span><span class="p">,</span> <span class="n">yaxis_title</span><span class="o">=</span><span class="s1">&#39;Variables&#39;</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<section id="preprocesamiento">
+<h2>Preprocesamiento<a class="headerlink" href="#preprocesamiento" title="Link to this heading">#</a></h2>
+<p>Dado que las variables ‘lat’ y ‘long’ explican lo mismo que las variables ‘ciudad’, ‘barrio’ y ‘sector’, lo cual es más que evidente en la gráfica de associations de vista en el EDA; para nuestras predicciones utilizaremos solo ‘lat’ y ‘long’.</p>
+<p>La variable ‘Piso No’ también será excluida de nuestro análisis al tener demasiados valores nulos, que no pudieron ser imputados con ninguna técnica de imputación, adicionalmente solo tiene una explicación para una de las categorías de inmuebles.</p>
+<p>Por otro lado, las variables ‘area_privada’ y ‘area_const’ tienen una correlación de 0.98, por ende, solo utilizaremos una de ellas, en este caso ‘area_const’.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ventas</span> <span class="o">=</span> <span class="n">ventas</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;ciudad&#39;</span><span class="p">,</span><span class="s1">&#39;barrio&#39;</span><span class="p">,</span> <span class="s1">&#39;Piso No&#39;</span><span class="p">,</span> <span class="s1">&#39;Sector&#39;</span><span class="p">,</span><span class="s1">&#39;area_privada&#39;</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Seleccionar columnas categóricas</span>
+<span class="n">columnas_categoricas</span> <span class="o">=</span> <span class="n">ventas</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;object&#39;</span><span class="p">,</span> <span class="s1">&#39;category&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">columns</span>
+
+<span class="c1"># Guardar los nombres de las columnas categóricas en una lista</span>
+<span class="n">nombre_columna_categorica</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">columnas_categoricas</span><span class="p">)</span>
+
+<span class="c1"># Seleccionar columnas numericas</span>
+<span class="n">columnas_numericas</span> <span class="o">=</span> <span class="n">ventas</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;int&#39;</span><span class="p">,</span> <span class="s1">&#39;float&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">columns</span>
+
+<span class="c1"># Guardar los nombres de las columnas numericas en una lista</span>
+<span class="n">nombre_columna_numericas</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">columnas_numericas</span> <span class="p">)</span>
+
+<span class="c1"># Mostrar la lista de nombres de columnas</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">nombre_columna_categorica</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">nombre_columna_numericas</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;category&#39;, &#39;Estado&#39;, &#39;Antiguedad&#39;, &#39;Tipo de Apartamento&#39;]
+[&#39;lat&#39;, &#39;long&#39;, &#39;price&#39;, &#39;rooms&#39;, &#39;baths&#39;, &#39;park&#39;, &#39;area_const&#39;, &#39;admon&#39;, &#39;Estrato&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Separar datos en variables predictoras y variable de interes</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">ventas</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;price&#39;</span><span class="p">],</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">ventas</span><span class="p">[</span><span class="s1">&#39;price&#39;</span><span class="p">]</span>
+
+<span class="c1"># Dividir los datos en conjuntos de entrenamiento y prueba</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">68</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calcular_metricas</span><span class="p">(</span><span class="n">X_trainval</span><span class="p">,</span> <span class="n">y_trainval</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">best_model</span><span class="p">):</span>
+
+    <span class="c1"># Realizar predicciones en el conjunto de entrenamiento (X_trainval)</span>
+    <span class="n">y_pred_train</span> <span class="o">=</span> <span class="n">best_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_trainval</span><span class="p">)</span>
+
+    <span class="c1"># Realizar predicciones en el conjunto de prueba (X_test)</span>
+    <span class="n">y_pred_test</span> <span class="o">=</span> <span class="n">best_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+    <span class="c1"># Calcular las métricas utilizando los datos de entrenamiento y validación</span>
+    <span class="n">mape_tra</span> <span class="o">=</span> <span class="n">mean_absolute_percentage_error</span><span class="p">(</span><span class="n">y_trainval</span><span class="p">,</span> <span class="n">y_pred_train</span><span class="p">)</span>
+    <span class="n">rmse_tra</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_trainval</span><span class="p">,</span> <span class="n">y_pred_train</span><span class="p">))</span>
+    <span class="n">r2_tra</span> <span class="o">=</span> <span class="n">r2_score</span><span class="p">(</span><span class="n">y_trainval</span><span class="p">,</span> <span class="n">y_pred_train</span><span class="p">)</span>
+
+    <span class="c1"># Calcular las métricas utilizando los datos de prueba (X_test, y_test)</span>
+    <span class="n">mape_test</span> <span class="o">=</span> <span class="n">mean_absolute_percentage_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_test</span><span class="p">)</span>
+    <span class="n">rmse_test</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_test</span><span class="p">))</span>
+    <span class="n">r2_test</span> <span class="o">=</span> <span class="n">r2_score</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred_test</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">mape_tra</span><span class="p">,</span> <span class="n">rmse_tra</span><span class="p">,</span> <span class="n">r2_tra</span><span class="p">,</span> <span class="n">mape_test</span><span class="p">,</span> <span class="n">rmse_test</span><span class="p">,</span> <span class="n">r2_test</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_residuals</span><span class="p">(</span><span class="n">y_true</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">):</span>
+    <span class="c1"># Calcula los residuos</span>
+    <span class="n">residuos</span> <span class="o">=</span> <span class="n">y_true</span> <span class="o">-</span> <span class="n">y_pred</span>
+    
+    <span class="c1"># Gráfico de dispersión de residuos</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">y_pred</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">residuos</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;markers&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Residuos&#39;</span><span class="p">,</span>
+                             <span class="n">marker</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="n">custom_colors</span><span class="p">[</span><span class="mi">3</span><span class="p">])))</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">add_hline</span><span class="p">(</span><span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">line_dash</span><span class="o">=</span><span class="s2">&quot;dash&quot;</span><span class="p">,</span> <span class="n">line_color</span><span class="o">=</span><span class="n">custom_colors</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+        <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Diagrama de Residuos&#39;</span><span class="p">,</span>
+        <span class="n">xaxis_title</span><span class="o">=</span><span class="s1">&#39;Valores Predichos&#39;</span><span class="p">,</span>
+        <span class="n">yaxis_title</span><span class="o">=</span><span class="s1">&#39;Residuos&#39;</span><span class="p">,</span>
+        <span class="n">showlegend</span><span class="o">=</span><span class="kc">False</span>
+    <span class="p">)</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+    <span class="c1"># Histograma de los residuos</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Histogram</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">residuos</span><span class="p">,</span> <span class="n">marker_color</span><span class="o">=</span><span class="n">custom_colors</span><span class="p">[</span><span class="mi">2</span><span class="p">]))</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+        <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Histograma de Residuos&#39;</span><span class="p">,</span>
+        <span class="n">xaxis_title</span><span class="o">=</span><span class="s1">&#39;Residuos&#39;</span><span class="p">,</span>
+        <span class="n">yaxis_title</span><span class="o">=</span><span class="s1">&#39;Frecuencia&#39;</span><span class="p">,</span>
+        <span class="n">bargap</span><span class="o">=</span><span class="mf">0.05</span>
+    <span class="p">)</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plot_real_vs_predicted</span><span class="p">(</span><span class="n">y_real</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+    <span class="c1"># Crear DataFrame con los valores reales y predichos</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+        <span class="s1">&#39;Y Real&#39;</span><span class="p">:</span> <span class="n">y_real</span><span class="p">,</span>
+        <span class="s1">&#39;Y Predicho&#39;</span><span class="p">:</span> <span class="n">y_pred</span>
+    <span class="p">})</span>
+    
+    <span class="c1"># Guardar los datos en un archivo CSV</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    
+    <span class="c1"># Crear el gráfico de dispersión para comparar los valores reales y predichos</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">y_real</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y_pred</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;markers&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Real vs Predicho&#39;</span><span class="p">,</span>
+                             <span class="n">marker</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="n">custom_colors</span><span class="p">[</span><span class="mi">3</span><span class="p">])))</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">y_real</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y_real</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;lines&#39;</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Comportamiento Ideal&#39;</span><span class="p">,</span>
+                             <span class="n">line</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="n">custom_colors</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">dash</span><span class="o">=</span><span class="s1">&#39;dash&#39;</span><span class="p">)))</span>
+    
+    <span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Comparación de Y Real vs Y Predicho&#39;</span><span class="p">,</span>
+                      <span class="n">xaxis_title</span><span class="o">=</span><span class="s1">&#39;Y Real&#39;</span><span class="p">,</span>
+                      <span class="n">yaxis_title</span><span class="o">=</span><span class="s1">&#39;Y Predicho&#39;</span><span class="p">,</span>
+                      <span class="n">legend_title</span><span class="o">=</span><span class="s1">&#39;Leyenda&#39;</span><span class="p">)</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="modelo-ridge">
+<h2>Modelo Ridge<a class="headerlink" href="#modelo-ridge" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Identificar las columnas categóricas</span>
+<span class="n">categorical_features</span> <span class="o">=</span> <span class="n">nombre_columna_categorica</span>  
+
+<span class="n">column_transformer</span> <span class="o">=</span> <span class="n">ColumnTransformer</span><span class="p">(</span>
+    <span class="n">transformers</span><span class="o">=</span><span class="p">[</span>
+        <span class="p">(</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="n">OneHotEncoder</span><span class="p">(</span><span class="n">handle_unknown</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">),</span> <span class="n">categorical_features</span><span class="p">)</span>
+    <span class="p">],</span>
+    <span class="n">remainder</span><span class="o">=</span><span class="s1">&#39;passthrough&#39;</span>  <span class="c1"># esto pasa las otras columnas numéricas sin cambios</span>
+<span class="p">)</span>
+
+<span class="c1"># Crear un pipeline que primero transforme los datos y luego aplique el modelo Ridge</span>
+<span class="n">pipeline</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">(</span><span class="n">steps</span><span class="o">=</span><span class="p">[</span>
+    <span class="p">(</span><span class="s1">&#39;preprocessor&#39;</span><span class="p">,</span> <span class="n">column_transformer</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;regressor&#39;</span><span class="p">,</span> <span class="n">Ridge</span><span class="p">())</span>
+<span class="p">])</span>
+
+<span class="c1"># Definir los parámetros para buscar utilizando GridSearchCV</span>
+<span class="n">param_grid</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;regressor__alpha&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">,</span> <span class="mi">1000</span><span class="p">],</span>  <span class="c1"># Diferentes valores de regularización</span>
+    <span class="s1">&#39;regressor__solver&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;auto&#39;</span><span class="p">,</span> <span class="s1">&#39;svd&#39;</span><span class="p">,</span> <span class="s1">&#39;cholesky&#39;</span><span class="p">,</span> <span class="s1">&#39;lsqr&#39;</span><span class="p">,</span> <span class="s1">&#39;sparse_cg&#39;</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="c1"># Definir el scorer para el GridSearchCV</span>
+<span class="n">mse_scorer</span> <span class="o">=</span> <span class="n">make_scorer</span><span class="p">(</span><span class="n">mean_squared_error</span><span class="p">,</span> <span class="n">greater_is_better</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># Realizar una búsqueda de cuadrícula para encontrar los mejores parámetros</span>
+<span class="n">grid_search</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">pipeline</span><span class="p">,</span> <span class="n">param_grid</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="n">mse_scorer</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">grid_search</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="c1"># El mejor modelo resultante del GridSearchCV</span>
+<span class="n">best_model</span> <span class="o">=</span> <span class="n">grid_search</span><span class="o">.</span><span class="n">best_estimator_</span>
+
+<span class="c1"># Calcular las métricas para el mejor modelo</span>
+<span class="n">mape_ridget</span><span class="p">,</span> <span class="n">rmse_ridget</span><span class="p">,</span> <span class="n">r2_ridget</span><span class="p">,</span> <span class="n">mape_ridge</span><span class="p">,</span> <span class="n">rmse_ridge</span><span class="p">,</span> <span class="n">r2_ridge</span> <span class="o">=</span> <span class="n">calcular_metricas</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">best_model</span><span class="p">)</span>
+
+<span class="c1"># Imprimir las métricas</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;MAPE en el conjunto de entrenamiento: </span><span class="si">{</span><span class="n">mape_ridget</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;RMSE en el conjunto de entrenamiento: </span><span class="si">{</span><span class="n">rmse_ridget</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;R^2 en el conjunto de entrenamiento: </span><span class="si">{</span><span class="n">r2_ridget</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mejores parámetros encontrados: &quot;</span><span class="p">,</span> <span class="n">grid_search</span><span class="o">.</span><span class="n">best_params_</span><span class="p">)</span>
+
+<span class="c1"># Imprimir las métricas</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;MAPE en el conjunto de prueba: </span><span class="si">{</span><span class="n">mape_ridge</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;RMSE en el conjunto de prueba: </span><span class="si">{</span><span class="n">rmse_ridge</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;R^2 en el conjunto de prueba: </span><span class="si">{</span><span class="n">r2_ridge</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="c1"># Guardar el modelo en un archivo</span>
+<span class="n">joblib</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">best_model</span><span class="p">,</span> <span class="s1">&#39;mejor_modelo_ridge.joblib&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fitting 5 folds for each of 35 candidates, totalling 175 fits
+MAPE en el conjunto de entrenamiento: 0.3269774915815762
+RMSE en el conjunto de entrenamiento: 196719013.41632155
+R^2 en el conjunto de entrenamiento: 0.765152034968397
+Mejores parámetros encontrados:  {&#39;regressor__alpha&#39;: 10, &#39;regressor__solver&#39;: &#39;auto&#39;}
+MAPE en el conjunto de prueba: 0.3326994860540121
+RMSE en el conjunto de prueba: 196371236.15672687
+R^2 en el conjunto de prueba: 0.7616554844549048
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;mejor_modelo_ridge.joblib&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_pred</span> <span class="o">=</span> <span class="n">best_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="n">plot_residuals</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">feature_names</span> <span class="o">=</span> <span class="n">X_test</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="n">plot_real_vs_predicted</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s1">&#39;real_vs_predicted_ridge.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Acceder al modelo Ridge y a los coeficientes dentro del pipeline</span>
+<span class="n">ridge_model</span> <span class="o">=</span> <span class="n">best_model</span><span class="o">.</span><span class="n">named_steps</span><span class="p">[</span><span class="s1">&#39;regressor&#39;</span><span class="p">]</span>
+<span class="n">ridge_coefs</span> <span class="o">=</span> <span class="n">ridge_model</span><span class="o">.</span><span class="n">coef_</span>
+
+<span class="c1"># Acceder a los nombres de las características transformadas</span>
+<span class="n">feature_names_transformed</span> <span class="o">=</span> <span class="n">best_model</span><span class="o">.</span><span class="n">named_steps</span><span class="p">[</span><span class="s1">&#39;preprocessor&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">get_feature_names_out</span><span class="p">()</span>
+
+<span class="c1"># Crear DataFrame para los coeficientes y características</span>
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">feature_names_transformed</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">ridge_coefs</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La longitud de los nombres de las características transformadas no coincide con los coeficientes.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">coefs</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+        <span class="s1">&#39;feature&#39;</span><span class="p">:</span> <span class="n">feature_names_transformed</span><span class="p">,</span>
+        <span class="s1">&#39;coefficient&#39;</span><span class="p">:</span> <span class="n">ridge_coefs</span>
+    <span class="p">})</span>
+    <span class="n">coefs</span><span class="p">[</span><span class="s1">&#39;abs_coefficient&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">coefs</span><span class="p">[</span><span class="s1">&#39;coefficient&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span>
+
+    <span class="c1"># Ordenar las características por la importancia absoluta de sus coeficientes de mayor a menor</span>
+    <span class="n">coefs</span> <span class="o">=</span> <span class="n">coefs</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;abs_coefficient&#39;</span><span class="p">)</span>
+    
+    <span class="c1"># Guardar en un archivo CSV</span>
+    <span class="n">coefs</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;FeatureImportances_ridge.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="c1"># Creando el gráfico con Plotly</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">coefs</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;feature&#39;</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;abs_coefficient&#39;</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;h&#39;</span><span class="p">,</span>
+                 <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Importancia de las Características - Ridge Regression&#39;</span><span class="p">,</span> <span class="n">color_discrete_sequence</span><span class="o">=</span><span class="n">custom_colors</span><span class="p">)</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+</section>
+<section id="modelo-lasso">
+<h2>Modelo Lasso<a class="headerlink" href="#modelo-lasso" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Identificar las columnas categóricas</span>
+<span class="n">categorical_features</span> <span class="o">=</span> <span class="n">nombre_columna_categorica</span>  
+
+<span class="n">column_transformer</span> <span class="o">=</span> <span class="n">ColumnTransformer</span><span class="p">(</span>
+    <span class="n">transformers</span><span class="o">=</span><span class="p">[</span>
+        <span class="p">(</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="n">OneHotEncoder</span><span class="p">(</span><span class="n">handle_unknown</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">),</span> <span class="n">categorical_features</span><span class="p">)</span>
+    <span class="p">],</span>
+    <span class="n">remainder</span><span class="o">=</span><span class="s1">&#39;passthrough&#39;</span>  <span class="c1"># esto pasa las otras columnas numéricas sin cambios</span>
+<span class="p">)</span>
+
+<span class="c1"># Crear un pipeline que primero transforme los datos y luego aplique el modelo Lasso</span>
+<span class="n">pipeline</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">(</span><span class="n">steps</span><span class="o">=</span><span class="p">[</span>
+    <span class="p">(</span><span class="s1">&#39;preprocessor&#39;</span><span class="p">,</span> <span class="n">column_transformer</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;regressor&#39;</span><span class="p">,</span> <span class="n">Lasso</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+<span class="p">])</span>
+
+<span class="c1"># Definir los parámetros para buscar utilizando GridSearchCV</span>
+<span class="n">param_grid</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;regressor__alpha&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.001</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">],</span>  <span class="c1"># Diferentes valores de regularización</span>
+    <span class="s1">&#39;regressor__max_iter&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">5000</span><span class="p">,</span> <span class="mi">10000</span><span class="p">],</span>  <span class="c1"># Ajustar si es necesario para asegurar la convergencia</span>
+    <span class="s1">&#39;regressor__fit_intercept&#39;</span><span class="p">:</span> <span class="p">[</span><span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">],</span>
+<span class="p">}</span>
+
+<span class="c1"># Definir el scorer para el GridSearchCV</span>
+<span class="n">mse_scorer</span> <span class="o">=</span> <span class="n">make_scorer</span><span class="p">(</span><span class="n">mean_squared_error</span><span class="p">,</span> <span class="n">greater_is_better</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># Realizar una búsqueda de cuadrícula para encontrar los mejores parámetros</span>
+<span class="n">grid_search</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">pipeline</span><span class="p">,</span> <span class="n">param_grid</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="n">mse_scorer</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">grid_search</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="c1"># El mejor modelo resultante del GridSearchCV</span>
+<span class="n">best_model</span> <span class="o">=</span> <span class="n">grid_search</span><span class="o">.</span><span class="n">best_estimator_</span>
+
+<span class="c1"># Calcular las métricas para el mejor modelo</span>
+<span class="n">mape_lassot</span><span class="p">,</span> <span class="n">rmse_lassot</span><span class="p">,</span> <span class="n">r2_lassot</span><span class="p">,</span> <span class="n">mape_lasso</span><span class="p">,</span> <span class="n">rmse_lasso</span><span class="p">,</span> <span class="n">r2_lasso</span> <span class="o">=</span> <span class="n">calcular_metricas</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">best_model</span><span class="p">)</span>
+
+<span class="c1"># Imprimir las métricas</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;MAPE en el conjunto de entrenamiento: </span><span class="si">{</span><span class="n">mape_lassot</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;RMSE en el conjunto de entrenamiento: </span><span class="si">{</span><span class="n">rmse_lassot</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;R^2 en el conjunto de entrenamiento: </span><span class="si">{</span><span class="n">r2_lassot</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mejores parámetros encontrados: &quot;</span><span class="p">,</span> <span class="n">grid_search</span><span class="o">.</span><span class="n">best_params_</span><span class="p">)</span>
+
+<span class="c1"># Imprimir las métricas</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;MAPE en el conjunto de prueba: </span><span class="si">{</span><span class="n">mape_lasso</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;RMSE en el conjunto de prueba: </span><span class="si">{</span><span class="n">rmse_lasso</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;R^2 en el conjunto de prueba: </span><span class="si">{</span><span class="n">r2_lasso</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="c1"># Guardar el modelo en un archivo</span>
+<span class="n">joblib</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">best_model</span><span class="p">,</span> <span class="s1">&#39;mejor_modelo_lasso.joblib&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fitting 5 folds for each of 36 candidates, totalling 180 fits
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MAPE en el conjunto de entrenamiento: 0.3270632724400667
+RMSE en el conjunto de entrenamiento: 196724049.59835398
+R^2 en el conjunto de entrenamiento: 0.7651400101801382
+Mejores parámetros encontrados:  {&#39;regressor__alpha&#39;: 100, &#39;regressor__fit_intercept&#39;: True, &#39;regressor__max_iter&#39;: 10000}
+MAPE en el conjunto de prueba: 0.3328245848799931
+RMSE en el conjunto de prueba: 196372547.9475254
+R^2 en el conjunto de prueba: 0.7616523000864321
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;mejor_modelo_lasso.joblib&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_pred</span> <span class="o">=</span> <span class="n">best_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="n">plot_residuals</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">feature_names</span> <span class="o">=</span> <span class="n">X_test</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="n">plot_real_vs_predicted</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s1">&#39;real_vs_predicted_lasso.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Acceder al modelo Lasso y a los coeficientes dentro del pipeline</span>
+<span class="n">lasso_model</span> <span class="o">=</span> <span class="n">best_model</span><span class="o">.</span><span class="n">named_steps</span><span class="p">[</span><span class="s1">&#39;regressor&#39;</span><span class="p">]</span>
+<span class="n">lasso_coefs</span> <span class="o">=</span> <span class="n">lasso_model</span><span class="o">.</span><span class="n">coef_</span>
+
+<span class="c1"># Acceder a los nombres de las características transformadas</span>
+<span class="n">feature_names_transformed</span> <span class="o">=</span> <span class="n">best_model</span><span class="o">.</span><span class="n">named_steps</span><span class="p">[</span><span class="s1">&#39;preprocessor&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">get_feature_names_out</span><span class="p">()</span>
+
+<span class="c1"># Crear DataFrame para los coeficientes y características</span>
+<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">feature_names_transformed</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">lasso_coefs</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;La longitud de los nombres de las características transformadas no coincide con los coeficientes.&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">coefs</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+        <span class="s1">&#39;feature&#39;</span><span class="p">:</span> <span class="n">feature_names_transformed</span><span class="p">,</span>
+        <span class="s1">&#39;coefficient&#39;</span><span class="p">:</span> <span class="n">lasso_coefs</span>
+    <span class="p">})</span>
+    <span class="n">coefs</span><span class="p">[</span><span class="s1">&#39;abs_coefficient&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">coefs</span><span class="p">[</span><span class="s1">&#39;coefficient&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">abs</span><span class="p">()</span>
+
+    <span class="c1"># Ordenar las características por la importancia absoluta de sus coeficientes de mayor a menor</span>
+    <span class="n">coefs</span> <span class="o">=</span> <span class="n">coefs</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;abs_coefficient&#39;</span><span class="p">)</span>
+    
+    <span class="c1"># Guardar en un archivo CSV</span>
+    <span class="n">coefs</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;FeatureImportances_lasso.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+    <span class="c1"># Creando el gráfico con Plotly</span>
+    <span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">coefs</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;feature&#39;</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;abs_coefficient&#39;</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;h&#39;</span><span class="p">,</span>
+                 <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Importancia de las Características - Lasso Regression&#39;</span><span class="p">,</span> <span class="n">color_discrete_sequence</span><span class="o">=</span><span class="n">custom_colors</span><span class="p">)</span>
+    <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+</section>
+<section id="modelo-xgboots">
+<h2>Modelo XGBoots<a class="headerlink" href="#modelo-xgboots" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Identificar las columnas categóricas</span>
+<span class="n">categorical_features</span> <span class="o">=</span> <span class="n">nombre_columna_categorica</span>  
+
+<span class="n">column_transformer</span> <span class="o">=</span> <span class="n">ColumnTransformer</span><span class="p">(</span>
+    <span class="n">transformers</span><span class="o">=</span><span class="p">[</span>
+        <span class="p">(</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="n">OneHotEncoder</span><span class="p">(</span><span class="n">handle_unknown</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">),</span> <span class="n">categorical_features</span><span class="p">)</span>
+    <span class="p">],</span>
+    <span class="n">remainder</span><span class="o">=</span><span class="s1">&#39;passthrough&#39;</span>  <span class="c1"># esto pasa las otras columnas numéricas sin cambios</span>
+<span class="p">)</span>
+
+<span class="c1"># Crear un pipeline que primero transforme los datos y luego aplique el modelo XGBoost</span>
+<span class="n">pipeline</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">(</span><span class="n">steps</span><span class="o">=</span><span class="p">[</span>
+    <span class="p">(</span><span class="s1">&#39;preprocessor&#39;</span><span class="p">,</span> <span class="n">column_transformer</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;regressor&#39;</span><span class="p">,</span> <span class="n">XGBRegressor</span><span class="p">(</span><span class="n">objective</span><span class="o">=</span><span class="s1">&#39;reg:squarederror&#39;</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+<span class="p">])</span>
+
+<span class="c1"># Definir los parámetros para buscar utilizando GridSearchCV</span>
+<span class="n">param_grid</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;regressor__n_estimators&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">200</span><span class="p">],</span>
+    <span class="s1">&#39;regressor__learning_rate&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">],</span>
+    <span class="s1">&#39;regressor__max_depth&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="c1"># Definir el scorer para el GridSearchCV</span>
+<span class="n">mse_scorer</span> <span class="o">=</span> <span class="n">make_scorer</span><span class="p">(</span><span class="n">mean_squared_error</span><span class="p">,</span> <span class="n">greater_is_better</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># Realizar una búsqueda de cuadrícula para encontrar los mejores parámetros</span>
+<span class="n">grid_search</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">pipeline</span><span class="p">,</span> <span class="n">param_grid</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="n">mse_scorer</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">grid_search</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="c1"># El mejor modelo resultante del GridSearchCV</span>
+<span class="n">best_model</span> <span class="o">=</span> <span class="n">grid_search</span><span class="o">.</span><span class="n">best_estimator_</span>
+
+<span class="c1"># Calcular las métricas para el mejor modelo</span>
+<span class="n">mape_xgboostt</span><span class="p">,</span> <span class="n">rmse_xgboostt</span><span class="p">,</span> <span class="n">r2_xgboostt</span><span class="p">,</span> <span class="n">mape_xgboost</span><span class="p">,</span> <span class="n">rmse_xgboost</span><span class="p">,</span> <span class="n">r2_xgboost</span> <span class="o">=</span> <span class="n">calcular_metricas</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">best_model</span><span class="p">)</span>
+
+<span class="c1"># Imprimir las métricas</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;MAPE en el conjunto de entrenamiento: </span><span class="si">{</span><span class="n">mape_xgboostt</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;RMSE en el conjunto de entrenamiento: </span><span class="si">{</span><span class="n">rmse_xgboostt</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;R^2 en el conjunto de entrenamiento: </span><span class="si">{</span><span class="n">r2_xgboostt</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mejores parámetros encontrados: &quot;</span><span class="p">,</span> <span class="n">grid_search</span><span class="o">.</span><span class="n">best_params_</span><span class="p">)</span>
+
+<span class="c1"># Imprimir las métricas</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;MAPE en el conjunto de prueba: </span><span class="si">{</span><span class="n">mape_xgboost</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;RMSE en el conjunto de prueba: </span><span class="si">{</span><span class="n">rmse_xgboost</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;R^2 en el conjunto de prueba: </span><span class="si">{</span><span class="n">r2_xgboost</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="c1"># Guardar el modelo en un archivo</span>
+<span class="n">joblib</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">best_model</span><span class="p">,</span> <span class="s1">&#39;mejor_modelo_xgboots.joblib&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fitting 5 folds for each of 27 candidates, totalling 135 fits
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>MAPE en el conjunto de entrenamiento: 0.1335734707767403
+RMSE en el conjunto de entrenamiento: 72698964.79082264
+R^2 en el conjunto de entrenamiento: 0.9679261879894682
+Mejores parámetros encontrados:  {&#39;regressor__learning_rate&#39;: 0.3, &#39;regressor__max_depth&#39;: 7, &#39;regressor__n_estimators&#39;: 200}
+MAPE en el conjunto de prueba: 0.1924401789399948
+RMSE en el conjunto de prueba: 107622322.47698922
+R^2 en el conjunto de prueba: 0.9284097078636615
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;mejor_modelo_xgboots.joblib&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_pred</span> <span class="o">=</span> <span class="n">best_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="n">plot_residuals</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">feature_names</span> <span class="o">=</span> <span class="n">X_test</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="n">plot_real_vs_predicted</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s1">&#39;real_vs_predicted_XGBoots.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#&#39;best_model&#39; es tu modelo XGBoost ya entrenado dentro de un pipeline</span>
+<span class="n">xgb_model</span> <span class="o">=</span> <span class="n">best_model</span><span class="o">.</span><span class="n">named_steps</span><span class="p">[</span><span class="s1">&#39;regressor&#39;</span><span class="p">]</span>
+
+<span class="c1"># Obtener las importancias de las características. Asumiendo que el modelo está entrenado.</span>
+<span class="n">feature_importances</span> <span class="o">=</span> <span class="n">xgb_model</span><span class="o">.</span><span class="n">feature_importances_</span>
+
+<span class="c1"># Acceder a los nombres de las características transformadas</span>
+<span class="n">feature_names_transformed</span> <span class="o">=</span> <span class="n">best_model</span><span class="o">.</span><span class="n">named_steps</span><span class="p">[</span><span class="s1">&#39;preprocessor&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">get_feature_names_out</span><span class="p">()</span>
+
+<span class="c1"># Crear DataFrame para las importancias de características</span>
+<span class="n">importances</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">&#39;feature&#39;</span><span class="p">:</span> <span class="n">feature_names_transformed</span><span class="p">,</span>
+    <span class="s1">&#39;importance&#39;</span><span class="p">:</span> <span class="n">feature_importances</span>
+<span class="p">})</span>
+
+<span class="c1"># Ordenar las características por la importancia de mayor a menor</span>
+<span class="n">importances_sorted</span> <span class="o">=</span> <span class="n">importances</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;importance&#39;</span><span class="p">)</span>
+
+<span class="c1"># Guardar en un archivo CSV</span>
+<span class="n">importances_sorted</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;FeatureImportances_xgboost.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># Crear el gráfico con Plotly</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">importances_sorted</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;importance&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;feature&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Importancia de las Características - XGBoost&#39;</span><span class="p">,</span>
+             <span class="n">labels</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;feature&#39;</span><span class="p">:</span> <span class="s1">&#39;Características&#39;</span><span class="p">,</span> <span class="s1">&#39;importance&#39;</span><span class="p">:</span> <span class="s1">&#39;Importancia&#39;</span><span class="p">},</span>
+             <span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;h&#39;</span><span class="p">,</span> <span class="n">color_discrete_sequence</span><span class="o">=</span><span class="n">custom_colors</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+</section>
+<section id="modelo-mlp">
+<h2>Modelo MLP<a class="headerlink" href="#modelo-mlp" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Identificar las columnas categóricas</span>
+<span class="n">categorical_features</span> <span class="o">=</span> <span class="n">nombre_columna_categorica</span>
+
+<span class="n">column_transformer</span> <span class="o">=</span> <span class="n">ColumnTransformer</span><span class="p">(</span>
+    <span class="n">transformers</span><span class="o">=</span><span class="p">[</span>
+        <span class="p">(</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="n">OneHotEncoder</span><span class="p">(</span><span class="n">handle_unknown</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">),</span> <span class="n">categorical_features</span><span class="p">)</span>
+    <span class="p">],</span>
+    <span class="n">remainder</span><span class="o">=</span><span class="s1">&#39;passthrough&#39;</span>  <span class="c1"># Esto pasa las otras columnas numéricas sin cambios</span>
+<span class="p">)</span>
+
+<span class="c1"># Crear un pipeline que primero transforme los datos y luego aplique el modelo MLP</span>
+<span class="n">pipeline</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">(</span><span class="n">steps</span><span class="o">=</span><span class="p">[</span>
+    <span class="p">(</span><span class="s1">&#39;preprocessor&#39;</span><span class="p">,</span> <span class="n">column_transformer</span><span class="p">),</span>
+    <span class="p">(</span><span class="s1">&#39;regressor&#39;</span><span class="p">,</span> <span class="n">MLPRegressor</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
+<span class="p">])</span>
+
+<span class="c1"># Definir los parámetros para buscar utilizando GridSearchCV</span>
+<span class="n">param_grid</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;regressor__hidden_layer_sizes&#39;</span><span class="p">:</span> <span class="p">[(</span><span class="mi">50</span><span class="p">,),</span> <span class="p">(</span><span class="mi">100</span><span class="p">,)],</span>  <span class="c1"># Varias configuraciones de capas ocultas</span>
+    <span class="s1">&#39;regressor__alpha&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.001</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">],</span>  <span class="c1"># Rango extendido de parámetro de regularización L2</span>
+    <span class="s1">&#39;regressor__learning_rate_init&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mf">0.005</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">],</span>  <span class="c1"># Tasa de aprendizaje inicial con más opciones</span>
+    <span class="s1">&#39;regressor__max_iter&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">200</span><span class="p">,</span> <span class="mi">300</span><span class="p">],</span>  <span class="c1"># Rango extendido de número máximo de iteraciones</span>
+<span class="p">}</span>
+
+<span class="c1"># Definir el scorer para el GridSearchCV</span>
+<span class="n">mse_scorer</span> <span class="o">=</span> <span class="n">make_scorer</span><span class="p">(</span><span class="n">mean_squared_error</span><span class="p">,</span> <span class="n">greater_is_better</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># Realizar una búsqueda de cuadrícula para encontrar los mejores parámetros</span>
+<span class="n">grid_search</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">pipeline</span><span class="p">,</span> <span class="n">param_grid</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">scoring</span><span class="o">=</span><span class="n">mse_scorer</span><span class="p">,</span> <span class="n">verbose</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">grid_search</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">)</span>
+
+<span class="c1"># El mejor modelo resultante del GridSearchCV</span>
+<span class="n">best_model</span> <span class="o">=</span> <span class="n">grid_search</span><span class="o">.</span><span class="n">best_estimator_</span>
+
+<span class="c1"># Imprimir las métricas</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mejores parámetros encontrados: &quot;</span><span class="p">,</span> <span class="n">grid_search</span><span class="o">.</span><span class="n">best_params_</span><span class="p">)</span>
+
+<span class="c1"># Calcular las métricas para el mejor modelo</span>
+<span class="n">mape_mlpt</span><span class="p">,</span> <span class="n">rmse_mlpt</span><span class="p">,</span> <span class="n">r2_mlpt</span><span class="p">,</span> <span class="n">mape_mlp</span><span class="p">,</span> <span class="n">rmse_mlp</span><span class="p">,</span> <span class="n">r2_mlp</span> <span class="o">=</span> <span class="n">calcular_metricas</span><span class="p">(</span><span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_test</span><span class="p">,</span> <span class="n">best_model</span><span class="p">)</span>
+
+<span class="c1"># Imprimir las métricas</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;MAPE en el conjunto de entrenamiento: </span><span class="si">{</span><span class="n">mape_mlpt</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;RMSE en el conjunto de entrenamiento: </span><span class="si">{</span><span class="n">rmse_mlpt</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;R^2 en el conjunto de entrenamiento: </span><span class="si">{</span><span class="n">r2_mlpt</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mejores parámetros encontrados: &quot;</span><span class="p">,</span> <span class="n">grid_search</span><span class="o">.</span><span class="n">best_params_</span><span class="p">)</span>
+
+<span class="c1"># Imprimir las métricas</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;MAPE en el conjunto de prueba: </span><span class="si">{</span><span class="n">mape_mlp</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;RMSE en el conjunto de prueba: </span><span class="si">{</span><span class="n">rmse_mlp</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;R^2 en el conjunto de prueba: </span><span class="si">{</span><span class="n">r2_mlp</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="c1"># Guardar el modelo en un archivo</span>
+<span class="n">joblib</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">best_model</span><span class="p">,</span> <span class="s1">&#39;mejor_modelo_mpl.joblib&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Fitting 5 folds for each of 24 candidates, totalling 120 fits
+Mejores parámetros encontrados:  {&#39;regressor__alpha&#39;: 0.1, &#39;regressor__hidden_layer_sizes&#39;: (100,), &#39;regressor__learning_rate_init&#39;: 0.01, &#39;regressor__max_iter&#39;: 300}
+MAPE en el conjunto de entrenamiento: 0.29659787768612
+RMSE en el conjunto de entrenamiento: 192516135.71084428
+R^2 en el conjunto de entrenamiento: 0.7750798329376432
+Mejores parámetros encontrados:  {&#39;regressor__alpha&#39;: 0.1, &#39;regressor__hidden_layer_sizes&#39;: (100,), &#39;regressor__learning_rate_init&#39;: 0.01, &#39;regressor__max_iter&#39;: 300}
+MAPE en el conjunto de prueba: 0.30390329713346426
+RMSE en el conjunto de prueba: 194189460.07168415
+R^2 en el conjunto de prueba: 0.7669223002370361
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;mejor_modelo_mpl.joblib&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">y_pred</span> <span class="o">=</span> <span class="n">best_model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X_test</span><span class="p">)</span>
+
+<span class="n">plot_residuals</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">feature_names</span> <span class="o">=</span> <span class="n">X_test</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+<span class="n">plot_real_vs_predicted</span><span class="p">(</span><span class="n">y_test</span><span class="p">,</span> <span class="n">y_pred</span><span class="p">,</span> <span class="n">filename</span><span class="o">=</span><span class="s1">&#39;real_vs_predicted_MLP.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># &#39;best_model&#39; es el modelo MLP ya entrenado dentro de un pipeline</span>
+<span class="n">mlp_model</span> <span class="o">=</span> <span class="n">best_model</span><span class="o">.</span><span class="n">named_steps</span><span class="p">[</span><span class="s1">&#39;regressor&#39;</span><span class="p">]</span>
+
+<span class="c1"># Acceder a los pesos de la primera capa oculta</span>
+<span class="n">weights_first_layer</span> <span class="o">=</span> <span class="n">mlp_model</span><span class="o">.</span><span class="n">coefs_</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># Coefs_ es una lista de matrices de coeficientes</span>
+
+<span class="c1"># Calcular la importancia aproximada de las características como la suma de los valores absolutos de los pesos</span>
+<span class="n">feature_importances</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">weights_first_layer</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Acceder a los nombres de las características transformadas</span>
+<span class="n">feature_names_transformed</span> <span class="o">=</span> <span class="n">best_model</span><span class="o">.</span><span class="n">named_steps</span><span class="p">[</span><span class="s1">&#39;preprocessor&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">get_feature_names_out</span><span class="p">()</span>
+
+<span class="c1"># Crear DataFrame para las importancias aproximadas</span>
+<span class="n">coefs</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">&#39;feature&#39;</span><span class="p">:</span> <span class="n">feature_names_transformed</span><span class="p">,</span>
+    <span class="s1">&#39;importance&#39;</span><span class="p">:</span> <span class="n">feature_importances</span>
+<span class="p">})</span>
+
+<span class="c1"># Ordenar las características por importancia</span>
+<span class="n">coefs_sorted</span> <span class="o">=</span> <span class="n">coefs</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;importance&#39;</span><span class="p">)</span>
+
+<span class="c1"># Guardar en un archivo CSV</span>
+<span class="n">coefs_sorted</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;FeatureImportances_mlp.csv&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># Creando el gráfico con Plotly</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">coefs_sorted</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;feature&#39;</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="s1">&#39;importance&#39;</span><span class="p">,</span> <span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;h&#39;</span><span class="p">,</span>
+             <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Importancia Aproximada de las Características - MLP&#39;</span><span class="p">,</span>
+             <span class="n">color_discrete_sequence</span><span class="o">=</span><span class="n">custom_colors</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+</section>
+<section id="resultados">
+<h2>Resultados<a class="headerlink" href="#resultados" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Nombres de los modelos</span>
+<span class="n">nombres_modelos</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Ridge&#39;</span><span class="p">,</span> <span class="s1">&#39;Lasso&#39;</span><span class="p">,</span> <span class="s1">&#39;XGBoost&#39;</span><span class="p">,</span> <span class="s1">&#39;MLP&#39;</span><span class="p">]</span>
+
+<span class="c1"># Definir las listas de métricas para cada modelo</span>
+<span class="n">mape_scores</span> <span class="o">=</span> <span class="p">[</span><span class="n">mape_ridge</span><span class="p">,</span> <span class="n">mape_lasso</span><span class="p">,</span> <span class="n">mape_xgboost</span><span class="p">,</span> <span class="n">mape_mlp</span><span class="p">]</span>
+<span class="n">rmse_scores</span> <span class="o">=</span> <span class="p">[</span><span class="n">rmse_ridge</span><span class="p">,</span> <span class="n">rmse_lasso</span><span class="p">,</span> <span class="n">rmse_xgboost</span><span class="p">,</span> <span class="n">rmse_mlp</span><span class="p">]</span>
+<span class="n">r2_scores</span> <span class="o">=</span> <span class="p">[</span><span class="n">r2_ridge</span><span class="p">,</span> <span class="n">r2_lasso</span><span class="p">,</span> <span class="n">r2_xgboost</span><span class="p">,</span> <span class="n">r2_mlp</span><span class="p">]</span>
+
+<span class="c1"># Crear un DataFrame para almacenar las métricas</span>
+<span class="n">df_resultados</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">&#39;Modelo&#39;</span><span class="p">:</span> <span class="n">nombres_modelos</span><span class="p">,</span>
+    <span class="s1">&#39;MAPE&#39;</span><span class="p">:</span> <span class="n">mape_scores</span><span class="p">,</span>
+    <span class="s1">&#39;RMSE&#39;</span><span class="p">:</span> <span class="n">rmse_scores</span><span class="p">,</span>
+    <span class="s1">&#39;R^2&#39;</span><span class="p">:</span> <span class="n">r2_scores</span>
+<span class="p">})</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">df_resultados</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>    Modelo      MAPE          RMSE       R^2
+0    Ridge  0.332810  1.963701e+08  0.761658
+1    Lasso  0.332825  1.963725e+08  0.761652
+2  XGBoost  0.192440  1.076223e+08  0.928410
+3      MLP  0.303903  1.941895e+08  0.766922
+</pre></div>
+</div>
+</div>
+</div>
+<section id="mejor-modelo-basado-en-la-metrica-rmse">
+<h3>Mejor modelo basado en la métrica RMSE<a class="headerlink" href="#mejor-modelo-basado-en-la-metrica-rmse" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Encontrar el índice del modelo con el RMSE más bajo</span>
+<span class="n">indice_mejor_rmse</span> <span class="o">=</span> <span class="n">rmse_scores</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">rmse_scores</span><span class="p">))</span>
+
+<span class="c1"># Obtiener el nombre del modelo con el RMSE más bajo</span>
+<span class="n">mejor_modelo</span> <span class="o">=</span> <span class="n">nombres_modelos</span><span class="p">[</span><span class="n">indice_mejor_rmse</span><span class="p">]</span>
+
+<span class="c1"># Mostrar el modelo con el RMSE más bajo y su valor de RMSE</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;El modelo con el RMSE más bajo es </span><span class="si">{</span><span class="n">mejor_modelo</span><span class="si">}</span><span class="s2"> con RMSE = </span><span class="si">{</span><span class="nb">min</span><span class="p">(</span><span class="n">rmse_scores</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>El modelo con el RMSE más bajo es XGBoost con RMSE = 107622322.47698922
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="mejor-modelo-basado-en-la-metrica-r-2">
+<h3>Mejor modelo basado en la métrica <span class="math notranslate nohighlight">\(R^2\)</span><a class="headerlink" href="#mejor-modelo-basado-en-la-metrica-r-2" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Encontrar el índice del modelo con el r2 más alto</span>
+<span class="n">indice_mejor_r2</span> <span class="o">=</span> <span class="n">r2_scores</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">r2_scores</span><span class="p">))</span>
+
+<span class="c1"># Obtiener el nombre del modelo con el r2 más alto</span>
+<span class="n">mejor_modelo2</span> <span class="o">=</span> <span class="n">nombres_modelos</span><span class="p">[</span><span class="n">indice_mejor_r2</span><span class="p">]</span>
+
+<span class="c1"># Mostrar el modelo con el r2 más alto y su valor de r2</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;El modelo con el r2 más alto es </span><span class="si">{</span><span class="n">mejor_modelo2</span><span class="si">}</span><span class="s2"> con r2 = </span><span class="si">{</span><span class="nb">max</span><span class="p">(</span><span class="n">r2_scores</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>El modelo con el r2 más alto es XGBoost con r2 = 0.9284097078636615
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="grafica-de-metricas">
+<h3>Gráfica de métricas<a class="headerlink" href="#grafica-de-metricas" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Gráfica de R2</span>
+<span class="n">fig_r2</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span>
+<span class="n">fig_r2</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Bar</span><span class="p">(</span>
+    <span class="n">y</span><span class="o">=</span><span class="n">nombres_modelos</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="n">r2_scores</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s1">&#39;R^2&#39;</span><span class="p">,</span>
+    <span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;h&#39;</span><span class="p">,</span>
+    <span class="n">marker</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="n">custom_colors</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="p">))</span>
+<span class="n">fig_r2</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Comparación de R^2 entre Modelos&#39;</span><span class="p">,</span>
+    <span class="n">xaxis</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;R^2&#39;</span><span class="p">),</span>
+    <span class="n">yaxis</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Modelos&#39;</span><span class="p">),</span>
+    <span class="n">barmode</span><span class="o">=</span><span class="s1">&#39;group&#39;</span><span class="p">,</span>
+    <span class="n">bargap</span><span class="o">=</span><span class="mf">0.15</span><span class="p">,</span>
+    <span class="n">bargroupgap</span><span class="o">=</span><span class="mf">0.1</span>
+<span class="p">)</span>
+<span class="n">fig_r2</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Gráfica de RMSE</span>
+<span class="n">fig_rmse</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span>
+<span class="n">fig_rmse</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Bar</span><span class="p">(</span>
+    <span class="n">y</span><span class="o">=</span><span class="n">nombres_modelos</span><span class="p">,</span>
+    <span class="n">x</span><span class="o">=</span><span class="n">rmse_scores</span><span class="p">,</span>
+    <span class="n">name</span><span class="o">=</span><span class="s1">&#39;RMSE Score&#39;</span><span class="p">,</span>
+    <span class="n">orientation</span><span class="o">=</span><span class="s1">&#39;h&#39;</span><span class="p">,</span>
+    <span class="n">marker</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="n">custom_colors</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="p">))</span>
+<span class="n">fig_rmse</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Comparación de RMSE entre Modelos&#39;</span><span class="p">,</span>
+    <span class="n">xaxis</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;RMSE Score&#39;</span><span class="p">),</span>
+    <span class="n">yaxis</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s1">&#39;Modelos&#39;</span><span class="p">),</span>
+    <span class="n">barmode</span><span class="o">=</span><span class="s1">&#39;group&#39;</span><span class="p">,</span>
+    <span class="n">bargap</span><span class="o">=</span><span class="mf">0.15</span><span class="p">,</span>
+    <span class="n">bargroupgap</span><span class="o">=</span><span class="mf">0.1</span>
+<span class="p">)</span>
+<span class="n">fig_rmse</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "psqlpy_venv"
+        },
+        kernelOptions: {
+            name: "psqlpy_venv",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'psqlpy_venv'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="notebookeda.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">EDA</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="markdown.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Resultados y conclusiones</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preprocesamiento">Preprocesamiento</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-ridge">Modelo Ridge</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-lasso">Modelo Lasso</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-xgboots">Modelo XGBoots</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#modelo-mlp">Modelo MLP</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#resultados">Resultados</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mejor-modelo-basado-en-la-metrica-rmse">Mejor modelo basado en la métrica RMSE</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mejor-modelo-basado-en-la-metrica-r-2">Mejor modelo basado en la métrica <span class="math notranslate nohighlight">\(R^2\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#grafica-de-metricas">Gráfica de métricas</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Buvoli Gina - Herrera Linda
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

@@ -1,0 +1,1520 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Análisis de datos nulos &#8212; Inmobiliaria HeBo</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'notebooks2';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="EDA" href="notebookeda.html" />
+    <link rel="prev" title="Análisis de datos atípicos" href="notebooks1.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/logo.png" class="logo__image only-light" alt="Inmobiliaria HeBo - Home"/>
+    <script>document.write(`<img src="_static/logo.png" class="logo__image only-dark" alt="Inmobiliaria HeBo - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="intro.html">
+                    Inmobiliaria HeBo
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="markdown-notebooks.html">Fuente de datos y variables</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks.html">Limpieza de datos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks1.html">Análisis de datos atípicos</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Análisis de datos nulos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebookeda.html">EDA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebookmodels.html">Modelos</a></li>
+<li class="toctree-l1"><a class="reference internal" href="markdown.html">Resultados y conclusiones</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/Linllamas/proyecto_vici" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/Linllamas/proyecto_vici/issues/new?title=Issue%20on%20page%20%2Fnotebooks2.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/notebooks2.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Análisis de datos nulos</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imputacion-eliminacion-de-datos-nulos">Imputación/eliminación de datos nulos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminacion">Eliminación:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#imputacion-de-acuerdo-con-otras-columnas">Imputación de acuerdo con otras columnas:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#imputacion-de-acuerdo-con-la-misma-columna">Imputación de acuerdo con la misma columna:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imputacion-usando-iterativeimputer">Imputación usando IterativeImputer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imputacion-datos-referentes-a-locacion">Imputación datos referentes a locación</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="analisis-de-datos-nulos">
+<h1>Análisis de datos nulos<a class="headerlink" href="#analisis-de-datos-nulos" title="Link to this heading">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">plotly.express</span> <span class="k">as</span> <span class="nn">px</span>
+<span class="kn">import</span> <span class="nn">plotly.graph_objects</span> <span class="k">as</span> <span class="nn">go</span>
+<span class="kn">from</span> <span class="nn">plotly.subplots</span> <span class="kn">import</span> <span class="n">make_subplots</span>
+<span class="kn">import</span> <span class="nn">missingno</span> <span class="k">as</span> <span class="nn">msno</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span>
+<span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="kn">import</span> <span class="n">Pipeline</span>
+<span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="kn">import</span> <span class="n">make_pipeline</span>
+<span class="kn">from</span> <span class="nn">sklearn.experimental</span> <span class="kn">import</span> <span class="n">enable_iterative_imputer</span>
+<span class="c1">#enable_iterative_imputer() </span>
+<span class="kn">from</span> <span class="nn">sklearn.impute</span> <span class="kn">import</span> <span class="n">IterativeImputer</span>
+<span class="kn">from</span> <span class="nn">sklearn.compose</span> <span class="kn">import</span> <span class="n">ColumnTransformer</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">OneHotEncoder</span>
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">MinMaxScaler</span>
+<span class="kn">from</span> <span class="nn">fuzzywuzzy</span> <span class="kn">import</span> <span class="n">process</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Definir la paleta de colores personalizada</span>
+<span class="n">custom_colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;#1F3040&#39;</span><span class="p">,</span> <span class="s1">&#39;#B9CDCA&#39;</span><span class="p">,</span> <span class="s1">&#39;#F2C6AC&#39;</span><span class="p">,</span> <span class="s1">&#39;#D99982&#39;</span><span class="p">,</span> <span class="s1">&#39;#735749&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ventas</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;C:/UNINORTE/VC/Proyecto2/Informe/docs/datos4.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ventas</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span><span class="o">.</span><span class="n">T</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>count</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>50%</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>lat</th>
+      <td>135094.0</td>
+      <td>5.647384e+00</td>
+      <td>2.210987e+00</td>
+      <td>3.254000e+00</td>
+      <td>4.649485e+00</td>
+      <td>4.720665e+00</td>
+      <td>6.205749e+00</td>
+      <td>1.104366e+01</td>
+    </tr>
+    <tr>
+      <th>long</th>
+      <td>136123.0</td>
+      <td>-7.485399e+01</td>
+      <td>8.810261e-01</td>
+      <td>-7.657617e+01</td>
+      <td>-7.556735e+01</td>
+      <td>-7.418215e+01</td>
+      <td>-7.406466e+01</td>
+      <td>-7.396190e+01</td>
+    </tr>
+    <tr>
+      <th>price</th>
+      <td>157909.0</td>
+      <td>4.961173e+08</td>
+      <td>4.050359e+08</td>
+      <td>2.000000e+06</td>
+      <td>2.400000e+08</td>
+      <td>3.700000e+08</td>
+      <td>6.000000e+08</td>
+      <td>4.900000e+09</td>
+    </tr>
+    <tr>
+      <th>rooms</th>
+      <td>153653.0</td>
+      <td>2.983157e+00</td>
+      <td>1.020468e+00</td>
+      <td>1.000000e+00</td>
+      <td>2.000000e+00</td>
+      <td>3.000000e+00</td>
+      <td>3.000000e+00</td>
+      <td>7.000000e+00</td>
+    </tr>
+    <tr>
+      <th>baths</th>
+      <td>156636.0</td>
+      <td>2.558543e+00</td>
+      <td>1.123930e+00</td>
+      <td>1.000000e+00</td>
+      <td>2.000000e+00</td>
+      <td>2.000000e+00</td>
+      <td>3.000000e+00</td>
+      <td>7.000000e+00</td>
+    </tr>
+    <tr>
+      <th>park</th>
+      <td>156972.0</td>
+      <td>1.171884e+00</td>
+      <td>9.385208e-01</td>
+      <td>0.000000e+00</td>
+      <td>1.000000e+00</td>
+      <td>1.000000e+00</td>
+      <td>2.000000e+00</td>
+      <td>5.000000e+00</td>
+    </tr>
+    <tr>
+      <th>area_privada</th>
+      <td>106558.0</td>
+      <td>1.115772e+02</td>
+      <td>6.274762e+01</td>
+      <td>1.000000e+00</td>
+      <td>6.500000e+01</td>
+      <td>9.200000e+01</td>
+      <td>1.410000e+02</td>
+      <td>3.240000e+02</td>
+    </tr>
+    <tr>
+      <th>area_const</th>
+      <td>151637.0</td>
+      <td>1.126387e+02</td>
+      <td>6.388135e+01</td>
+      <td>1.000000e+00</td>
+      <td>6.500000e+01</td>
+      <td>9.300000e+01</td>
+      <td>1.430000e+02</td>
+      <td>3.250000e+02</td>
+    </tr>
+    <tr>
+      <th>admon</th>
+      <td>97043.0</td>
+      <td>3.527261e+05</td>
+      <td>2.487091e+05</td>
+      <td>0.000000e+00</td>
+      <td>1.673000e+05</td>
+      <td>2.900000e+05</td>
+      <td>4.910000e+05</td>
+      <td>1.121000e+06</td>
+    </tr>
+    <tr>
+      <th>Estrato</th>
+      <td>155484.0</td>
+      <td>4.353715e+00</td>
+      <td>1.279689e+00</td>
+      <td>1.000000e+00</td>
+      <td>3.000000e+00</td>
+      <td>4.000000e+00</td>
+      <td>6.000000e+00</td>
+      <td>6.000000e+00</td>
+    </tr>
+    <tr>
+      <th>Estado</th>
+      <td>91725.0</td>
+      <td>4.501052e+00</td>
+      <td>5.422005e-01</td>
+      <td>3.000000e+00</td>
+      <td>4.000000e+00</td>
+      <td>5.000000e+00</td>
+      <td>5.000000e+00</td>
+      <td>5.000000e+00</td>
+    </tr>
+    <tr>
+      <th>Piso No</th>
+      <td>96081.0</td>
+      <td>4.254233e+00</td>
+      <td>3.114510e+00</td>
+      <td>1.000000e+00</td>
+      <td>2.000000e+00</td>
+      <td>3.000000e+00</td>
+      <td>5.000000e+00</td>
+      <td>1.600000e+01</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ventas</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 157909 entries, 0 to 157908
+Data columns (total 18 columns):
+ #   Column               Non-Null Count   Dtype  
+---  ------               --------------   -----  
+ 0   lat                  135094 non-null  float64
+ 1   long                 136123 non-null  float64
+ 2   category             157909 non-null  object 
+ 3   price                157909 non-null  float64
+ 4   rooms                153653 non-null  float64
+ 5   baths                156636 non-null  float64
+ 6   park                 156972 non-null  float64
+ 7   ciudad               157909 non-null  object 
+ 8   barrio               157690 non-null  object 
+ 9   area_privada         106558 non-null  float64
+ 10  area_const           151637 non-null  float64
+ 11  admon                97043 non-null   float64
+ 12  Estrato              155484 non-null  float64
+ 13  Estado               91725 non-null   float64
+ 14  Antiguedad           130407 non-null  object 
+ 15  Piso No              96081 non-null   float64
+ 16  Tipo de Apartamento  48024 non-null   object 
+ 17  Sector               125279 non-null  object 
+dtypes: float64(12), object(6)
+memory usage: 21.7+ MB
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># DataFrame para el análisis de datos nulos y datos únicos</span>
+<span class="n">analisis_nulos</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">&#39;Conteo&#39;</span><span class="p">:</span> <span class="n">ventas</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span>  <span class="c1"># Conteo de valores nulos</span>
+    <span class="s1">&#39;Porcentaje&#39;</span><span class="p">:</span> <span class="p">(</span><span class="n">ventas</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">ventas</span><span class="p">))</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span>  <span class="c1"># Porcentaje de valores nulos</span>
+    <span class="s1">&#39;Porcentaje_Unicos&#39;</span><span class="p">:</span> <span class="p">(</span><span class="n">ventas</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">ventas</span><span class="p">))</span> <span class="o">*</span> <span class="mi">100</span>  <span class="c1"># Porcentaje de valores únicos</span>
+<span class="p">})</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">analisis_nulos</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                     Conteo  Porcentaje  Porcentaje_Unicos
+lat                   22815   14.448195          45.972047
+long                  21786   13.796554          25.176526
+category                  0    0.000000           0.001900
+price                     0    0.000000           2.576801
+rooms                  4256    2.695223           0.004433
+baths                  1273    0.806161           0.004433
+park                    937    0.593380           0.003800
+ciudad                    0    0.000000           0.005066
+barrio                  219    0.138687           3.558379
+area_privada          51351   32.519362           0.514853
+area_const             6272    3.971908           1.484399
+admon                 60866   38.544985           3.071389
+Estrato                2425    1.535695           0.003800
+Estado                66184   41.912747           0.001900
+Antiguedad            27502   17.416360           0.003166
+Piso No               61828   39.154196           0.010132
+Tipo de Apartamento  109885   69.587547           0.005066
+Sector                32630   20.663800           0.599079
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Gráfico para el conteo de valores nulos con la paleta de colores especificada</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;#F2C6AC&#39;</span><span class="p">,</span> <span class="s1">&#39;#1F3040&#39;</span><span class="p">,</span> <span class="s1">&#39;#B9CDCA&#39;</span><span class="p">,</span><span class="s1">&#39;#D99982&#39;</span><span class="p">,</span> <span class="s1">&#39;#735749&#39;</span><span class="p">]</span>  <span class="c1"># Definir la paleta de colores</span>
+<span class="n">fig_conteo</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">analisis_nulos</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">analisis_nulos</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Conteo&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Conteo de valores nulos por columna&#39;</span><span class="p">,</span>
+                    <span class="n">color_discrete_sequence</span><span class="o">=</span><span class="n">colors</span><span class="p">)</span>
+<span class="n">fig_conteo</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">xaxis_title</span><span class="o">=</span><span class="s1">&#39;Columnas&#39;</span><span class="p">,</span> <span class="n">yaxis_title</span><span class="o">=</span><span class="s1">&#39;Conteo de valores nulos&#39;</span><span class="p">,</span> <span class="n">xaxis_tickangle</span><span class="o">=-</span><span class="mi">45</span><span class="p">)</span>
+<span class="n">fig_conteo</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Gráfico para el porcentaje de valores nulos</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span>
+
+<span class="c1"># Agregar las barras para el porcentaje de valores nulos</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Bar</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="n">analisis_nulos</span><span class="o">.</span><span class="n">index</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="n">analisis_nulos</span><span class="p">[</span><span class="s1">&#39;Porcentaje&#39;</span><span class="p">],</span>
+    <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Porcentaje de Nulos&#39;</span><span class="p">,</span>
+    <span class="n">marker_color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># Asignar el primer color de la paleta</span>
+<span class="p">))</span>
+
+<span class="c1"># Agregar una línea para el porcentaje de datos únicos</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="n">analisis_nulos</span><span class="o">.</span><span class="n">index</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="n">analisis_nulos</span><span class="p">[</span><span class="s1">&#39;Porcentaje_Unicos&#39;</span><span class="p">],</span>
+    <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Porcentaje de Datos Únicos&#39;</span><span class="p">,</span>
+    <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;lines+markers&#39;</span><span class="p">,</span>
+    <span class="n">line</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span>  <span class="c1"># Asignar el segundo color de la paleta</span>
+    <span class="n">marker</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># Usar otro color para los marcadores</span>
+<span class="p">))</span>
+
+<span class="c1"># Actualizar el layout para incluir título y nombres de ejes</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Porcentaje de valores nulos y únicos por columna&#39;</span><span class="p">,</span>
+    <span class="n">xaxis_title</span><span class="o">=</span><span class="s1">&#39;Columnas&#39;</span><span class="p">,</span>
+    <span class="n">yaxis_title</span><span class="o">=</span><span class="s1">&#39;Porcentaje (%)&#39;</span><span class="p">,</span>
+    <span class="n">xaxis_tickangle</span><span class="o">=-</span><span class="mi">45</span><span class="p">,</span>
+    <span class="n">yaxis</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+        <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Porcentaje (%)&#39;</span><span class="p">,</span>
+        <span class="n">titlefont_size</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span>
+        <span class="n">tickfont_size</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span>
+    <span class="p">),</span>
+    <span class="n">legend</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+        <span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+        <span class="n">y</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+
+<span class="c1"># Mostrar el gráfico</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Mapa de calor de datos faltantes</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">ventas</span><span class="o">.</span><span class="n">isnull</span><span class="p">(),</span> <span class="n">cbar</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">custom_colors</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Mapa de calor de datos faltantes&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/e6a4fb4904290b328ae2512ee9d61b6a4a112119e101de531e22c2b32676a6b2.png" src="_images/e6a4fb4904290b328ae2512ee9d61b6a4a112119e101de531e22c2b32676a6b2.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Establecer estilo de gráfico</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;ggplot&#39;</span><span class="p">)</span>
+
+<span class="c1"># Crear el dendrograma de datos faltantes</span>
+<span class="n">msno</span><span class="o">.</span><span class="n">dendrogram</span><span class="p">(</span><span class="n">ventas</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+
+<span class="c1"># Personalizar el gráfico</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Dendrograma de datos faltantes&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Número de datos faltantes&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Columnas&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+
+<span class="c1"># Mostrar el gráfico</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/4f641466aee60b07546bc8f5aa52d1c1585f2168ec7c4dcd43556c0a2c489481.png" src="_images/4f641466aee60b07546bc8f5aa52d1c1585f2168ec7c4dcd43556c0a2c489481.png" />
+</div>
+</div>
+<section id="imputacion-eliminacion-de-datos-nulos">
+<h2>Imputación/eliminación de datos nulos<a class="headerlink" href="#imputacion-eliminacion-de-datos-nulos" title="Link to this heading">#</a></h2>
+<section id="eliminacion">
+<h3>Eliminación:<a class="headerlink" href="#eliminacion" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Eliminar filas donde &#39;price&#39; es nulo</span>
+<span class="n">ventas</span> <span class="o">=</span> <span class="n">ventas</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;price&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Eliminar filas donde &#39;barrio&#39; es nulo</span>
+<span class="n">ventas</span> <span class="o">=</span> <span class="n">ventas</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;barrio&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="imputacion-de-acuerdo-con-otras-columnas">
+<h3>Imputación de acuerdo con otras columnas:<a class="headerlink" href="#imputacion-de-acuerdo-con-otras-columnas" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Actualizar &#39;area_privada&#39; con los valores de &#39;area_const&#39; cuando &#39;area_privada&#39; es nula</span>
+<span class="n">ventas</span><span class="p">[</span><span class="s1">&#39;area_privada&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ventas</span><span class="p">[</span><span class="s1">&#39;area_privada&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">ventas</span><span class="p">[</span><span class="s1">&#39;area_const&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Asignar el valor 1 a &#39;Piso No&#39; donde la categoría es &#39;casa&#39; y &#39;Piso No&#39; es nulo</span>
+<span class="n">ventas</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">ventas</span><span class="p">[</span><span class="s1">&#39;category&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Casa&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">ventas</span><span class="p">[</span><span class="s1">&#39;Piso No&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()),</span> <span class="s1">&#39;Piso No&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ventas</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">ventas</span><span class="p">[</span><span class="s1">&#39;category&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Casa&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">ventas</span><span class="p">[</span><span class="s1">&#39;Tipo de Apartamento&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isnull</span><span class="p">()),</span> <span class="s1">&#39;Tipo de Apartamento&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;No Aplica&#39;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="imputacion-de-acuerdo-con-la-misma-columna">
+<h3>Imputación de acuerdo con la misma columna:<a class="headerlink" href="#imputacion-de-acuerdo-con-la-misma-columna" title="Link to this heading">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Rellenar valores nulos en la columna &#39;Sector&#39; con &#39;No Especificado&#39;</span>
+<span class="n">ventas</span><span class="p">[</span><span class="s1">&#39;Sector&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ventas</span><span class="p">[</span><span class="s1">&#39;Sector&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s1">&#39;No Especificado&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Rellenar valores nulos en la columna &#39;Tipo de Apartamento&#39; con &#39;No Especificado&#39;</span>
+<span class="n">ventas</span><span class="p">[</span><span class="s1">&#39;Tipo de Apartamento&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ventas</span><span class="p">[</span><span class="s1">&#39;Tipo de Apartamento&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s1">&#39;No Especificado&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Asegurarse de que &#39;Antiguedad&#39; es una columna categórica</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">pd</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">is_categorical_dtype</span><span class="p">(</span><span class="n">ventas</span><span class="p">[</span><span class="s1">&#39;Antiguedad&#39;</span><span class="p">]):</span>
+    <span class="n">ventas</span><span class="p">[</span><span class="s1">&#39;Antiguedad&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ventas</span><span class="p">[</span><span class="s1">&#39;Antiguedad&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span>
+
+<span class="c1"># Agregar &#39;No Especificado&#39; a las categorías de la columna &#39;Antiguedad&#39;</span>
+<span class="k">if</span> <span class="s1">&#39;No Especificado&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ventas</span><span class="p">[</span><span class="s1">&#39;Antiguedad&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">cat</span><span class="o">.</span><span class="n">categories</span><span class="p">:</span>
+    <span class="n">ventas</span><span class="p">[</span><span class="s1">&#39;Antiguedad&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ventas</span><span class="p">[</span><span class="s1">&#39;Antiguedad&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">cat</span><span class="o">.</span><span class="n">add_categories</span><span class="p">(</span><span class="s1">&#39;No Especificado&#39;</span><span class="p">)</span>
+
+<span class="c1"># Rellenar valores nulos en la columna &#39;Antiguedad&#39; con &#39;No Especificado&#39;</span>
+<span class="n">ventas</span><span class="p">[</span><span class="s1">&#39;Antiguedad&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ventas</span><span class="p">[</span><span class="s1">&#39;Antiguedad&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s1">&#39;No Especificado&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Linda Herrera\AppData\Local\Temp\ipykernel_16712\2807709208.py:2: DeprecationWarning:
+
+is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, pd.CategoricalDtype) instead
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Asegurarse de que &#39;Estado&#39; es una columna categórica</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="n">pd</span><span class="o">.</span><span class="n">api</span><span class="o">.</span><span class="n">types</span><span class="o">.</span><span class="n">is_categorical_dtype</span><span class="p">(</span><span class="n">ventas</span><span class="p">[</span><span class="s1">&#39;Estado&#39;</span><span class="p">]):</span>
+    <span class="n">ventas</span><span class="p">[</span><span class="s1">&#39;Estado&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ventas</span><span class="p">[</span><span class="s1">&#39;Estado&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;category&#39;</span><span class="p">)</span>
+
+<span class="c1"># Agregar &#39;No Especificado&#39; a las categorías de la columna &#39;Estado&#39;</span>
+<span class="k">if</span> <span class="s1">&#39;No Especificado&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">ventas</span><span class="p">[</span><span class="s1">&#39;Estado&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">cat</span><span class="o">.</span><span class="n">categories</span><span class="p">:</span>
+    <span class="n">ventas</span><span class="p">[</span><span class="s1">&#39;Estado&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ventas</span><span class="p">[</span><span class="s1">&#39;Estado&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">cat</span><span class="o">.</span><span class="n">add_categories</span><span class="p">(</span><span class="s1">&#39;No Especificado&#39;</span><span class="p">)</span>
+
+<span class="c1"># Rellenar valores nulos en la columna &#39;Estado&#39; con &#39;No Especificado&#39;</span>
+<span class="n">ventas</span><span class="p">[</span><span class="s1">&#39;Estado&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ventas</span><span class="p">[</span><span class="s1">&#39;Estado&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="s1">&#39;No Especificado&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\Linda Herrera\AppData\Local\Temp\ipykernel_16712\1416482886.py:2: DeprecationWarning:
+
+is_categorical_dtype is deprecated and will be removed in a future version. Use isinstance(dtype, pd.CategoricalDtype) instead
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># DataFrame para el análisis de datos nulos y datos únicos</span>
+<span class="n">analisis_nulos</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">&#39;Conteo&#39;</span><span class="p">:</span> <span class="n">ventas</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span>  <span class="c1"># Conteo de valores nulos</span>
+    <span class="s1">&#39;Porcentaje&#39;</span><span class="p">:</span> <span class="p">(</span><span class="n">ventas</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">ventas</span><span class="p">))</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span>  <span class="c1"># Porcentaje de valores nulos</span>
+    <span class="s1">&#39;Porcentaje_Unicos&#39;</span><span class="p">:</span> <span class="p">(</span><span class="n">ventas</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">ventas</span><span class="p">))</span> <span class="o">*</span> <span class="mi">100</span>  <span class="c1"># Porcentaje de valores únicos</span>
+<span class="p">})</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">analisis_nulos</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                     Conteo  Porcentaje  Porcentaje_Unicos
+lat                   22710   14.401674          45.994673
+long                  21697   13.759275          25.193100
+category                  0    0.000000           0.001902
+price                     0    0.000000           2.570233
+rooms                  4246    2.692625           0.004439
+baths                  1272    0.806646           0.004439
+park                    937    0.594204           0.003805
+ciudad                    0    0.000000           0.004439
+barrio                    0    0.000000           3.563320
+area_privada           5512    3.495466           1.038747
+area_const             6260    3.969814           1.485827
+admon                 60725   38.509100           3.071850
+Estrato                2345    1.487095           0.003805
+Estado                    0    0.000000           0.002537
+Antiguedad                0    0.000000           0.003805
+Piso No               43286   27.450060           0.010146
+Tipo de Apartamento       0    0.000000           0.005707
+Sector                    0    0.000000           0.600545
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Establecer estilo de gráfico</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">style</span><span class="o">.</span><span class="n">use</span><span class="p">(</span><span class="s1">&#39;ggplot&#39;</span><span class="p">)</span>
+
+<span class="c1"># Crear el dendrograma de datos faltantes</span>
+<span class="n">msno</span><span class="o">.</span><span class="n">dendrogram</span><span class="p">(</span><span class="n">ventas</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+
+<span class="c1"># Personalizar el gráfico</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Dendrograma de datos faltantes&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Número de datos faltantes&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Columnas&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+
+<span class="c1"># Mostrar el gráfico</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/6b5c8204d8a6e77a50ae73db53ccebd8d364635ba9e538e6aeb16b85a59c96a4.png" src="_images/6b5c8204d8a6e77a50ae73db53ccebd8d364635ba9e538e6aeb16b85a59c96a4.png" />
+</div>
+</div>
+</section>
+</section>
+<section id="imputacion-usando-iterativeimputer">
+<h2>Imputación usando IterativeImputer<a class="headerlink" href="#imputacion-usando-iterativeimputer" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define which columns are numeric and which are categorical</span>
+<span class="n">numeric_features</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;rooms&#39;</span><span class="p">,</span> <span class="s1">&#39;baths&#39;</span><span class="p">,</span> <span class="s1">&#39;park&#39;</span><span class="p">,</span> <span class="s1">&#39;area_const&#39;</span><span class="p">,</span> <span class="s1">&#39;area_privada&#39;</span><span class="p">,</span> <span class="s1">&#39;admon&#39;</span><span class="p">,</span> <span class="s1">&#39;price&#39;</span><span class="p">,</span> <span class="s1">&#39;Estrato&#39;</span><span class="p">]</span>
+<span class="n">categorical_features</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;category&#39;</span><span class="p">,</span> <span class="s1">&#39;ciudad&#39;</span><span class="p">,</span> <span class="s1">&#39;Antiguedad&#39;</span><span class="p">,</span> <span class="s1">&#39;Tipo de Apartamento&#39;</span><span class="p">]</span>
+
+<span class="c1"># Define transformers</span>
+<span class="n">numeric_transformer</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([</span>
+    <span class="p">(</span><span class="s1">&#39;imputer&#39;</span><span class="p">,</span> <span class="n">IterativeImputer</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">0</span><span class="p">)),</span>
+    <span class="p">(</span><span class="s1">&#39;scaler&#39;</span><span class="p">,</span> <span class="n">MinMaxScaler</span><span class="p">())</span>
+<span class="p">])</span>
+
+<span class="n">categorical_transformer</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([</span>
+    <span class="p">(</span><span class="s1">&#39;encoder&#39;</span><span class="p">,</span> <span class="n">OneHotEncoder</span><span class="p">(</span><span class="n">handle_unknown</span><span class="o">=</span><span class="s1">&#39;ignore&#39;</span><span class="p">))</span>
+<span class="p">])</span>
+
+<span class="c1"># Combine processing</span>
+<span class="n">preprocessor</span> <span class="o">=</span> <span class="n">ColumnTransformer</span><span class="p">(</span>
+    <span class="n">transformers</span><span class="o">=</span><span class="p">[</span>
+        <span class="p">(</span><span class="s1">&#39;num&#39;</span><span class="p">,</span> <span class="n">numeric_transformer</span><span class="p">,</span> <span class="n">numeric_features</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">&#39;cat&#39;</span><span class="p">,</span> <span class="n">categorical_transformer</span><span class="p">,</span> <span class="n">categorical_features</span><span class="p">)</span>
+    <span class="p">])</span>
+
+<span class="c1"># Setup the pipeline</span>
+<span class="n">pipeline</span> <span class="o">=</span> <span class="n">Pipeline</span><span class="p">([</span>
+    <span class="p">(</span><span class="s1">&#39;preprocessor&#39;</span><span class="p">,</span> <span class="n">preprocessor</span><span class="p">)</span>
+<span class="p">])</span>
+
+<span class="c1"># Fit the data</span>
+<span class="n">pipeline</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">ventas</span><span class="p">)</span>
+
+<span class="c1"># Transform the data</span>
+<span class="n">X_transformed</span> <span class="o">=</span> <span class="n">pipeline</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">ventas</span><span class="p">)</span>
+
+<span class="c1"># Get the scaler from the pipeline</span>
+<span class="n">scaler</span> <span class="o">=</span> <span class="n">pipeline</span><span class="o">.</span><span class="n">named_steps</span><span class="p">[</span><span class="s1">&#39;preprocessor&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">named_transformers_</span><span class="p">[</span><span class="s1">&#39;num&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">named_steps</span><span class="p">[</span><span class="s1">&#39;scaler&#39;</span><span class="p">]</span>
+
+<span class="c1"># Inverse transform the scaled numeric data</span>
+<span class="n">numeric_data</span> <span class="o">=</span> <span class="n">scaler</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span>
+    <span class="n">X_transformed</span><span class="p">[:,</span> <span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="n">numeric_features</span><span class="p">)]</span>
+<span class="p">)</span>
+
+<span class="c1"># Extract categorical data after encoding</span>
+<span class="n">categorical_data</span> <span class="o">=</span> <span class="n">X_transformed</span><span class="p">[:,</span> <span class="nb">len</span><span class="p">(</span><span class="n">numeric_features</span><span class="p">):]</span>
+
+<span class="c1"># Combine all transformed features</span>
+<span class="n">all_features</span> <span class="o">=</span> <span class="n">numeric_features</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="n">pipeline</span><span class="o">.</span><span class="n">named_steps</span><span class="p">[</span><span class="s1">&#39;preprocessor&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">named_transformers_</span><span class="p">[</span><span class="s1">&#39;cat&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">named_steps</span><span class="p">[</span><span class="s1">&#39;encoder&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">get_feature_names_out</span><span class="p">())</span>
+<span class="n">imputed_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+    <span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">([</span><span class="n">numeric_data</span><span class="p">,</span> <span class="n">categorical_data</span><span class="p">]),</span>
+    <span class="n">columns</span><span class="o">=</span><span class="n">all_features</span><span class="p">,</span>
+    <span class="n">index</span><span class="o">=</span><span class="n">ventas</span><span class="o">.</span><span class="n">index</span>
+<span class="p">)</span>
+
+<span class="c1"># Update the ventas DataFrame with the numeric data</span>
+<span class="n">ventas</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">imputed_data</span><span class="p">[</span><span class="n">numeric_features</span><span class="p">])</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">ventas</span><span class="o">.</span><span class="n">info</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+Index: 157690 entries, 0 to 157908
+Data columns (total 18 columns):
+ #   Column               Non-Null Count   Dtype   
+---  ------               --------------   -----   
+ 0   lat                  134980 non-null  float64 
+ 1   long                 135993 non-null  float64 
+ 2   category             157690 non-null  object  
+ 3   price                157690 non-null  float64 
+ 4   rooms                157690 non-null  float64 
+ 5   baths                157690 non-null  float64 
+ 6   park                 157690 non-null  float64 
+ 7   ciudad               157690 non-null  object  
+ 8   barrio               157690 non-null  object  
+ 9   area_privada         157690 non-null  float64 
+ 10  area_const           157690 non-null  float64 
+ 11  admon                157690 non-null  float64 
+ 12  Estrato              157690 non-null  float64 
+ 13  Estado               157690 non-null  category
+ 14  Antiguedad           157690 non-null  category
+ 15  Piso No              114404 non-null  float64 
+ 16  Tipo de Apartamento  157690 non-null  object  
+ 17  Sector               157690 non-null  object  
+dtypes: category(2), float64(11), object(5)
+memory usage: 20.8+ MB
+None
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="imputacion-datos-referentes-a-locacion">
+<h2>Imputación datos referentes a locación<a class="headerlink" href="#imputacion-datos-referentes-a-locacion" title="Link to this heading">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calcular los promedios por ciudad, barrio, y sector</span>
+<span class="n">promedios_ciudad_barrio_sector</span> <span class="o">=</span> <span class="n">ventas</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;ciudad&#39;</span><span class="p">,</span> <span class="s1">&#39;barrio&#39;</span><span class="p">,</span> <span class="s1">&#39;Sector&#39;</span><span class="p">])[[</span><span class="s1">&#39;lat&#39;</span><span class="p">,</span> <span class="s1">&#39;long&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">promedios_ciudad_barrio</span> <span class="o">=</span> <span class="n">ventas</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;ciudad&#39;</span><span class="p">,</span> <span class="s1">&#39;barrio&#39;</span><span class="p">])[[</span><span class="s1">&#39;lat&#39;</span><span class="p">,</span> <span class="s1">&#39;long&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">promedios_ciudad</span> <span class="o">=</span> <span class="n">ventas</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;ciudad&#39;</span><span class="p">)[[</span><span class="s1">&#39;lat&#39;</span><span class="p">,</span> <span class="s1">&#39;long&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+<span class="c1"># Definir una función para imputar lat y long basada en los promedios calculados</span>
+<span class="k">def</span> <span class="nf">imputar_lat_long</span><span class="p">(</span><span class="n">row</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">isnull</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;lat&#39;</span><span class="p">])</span> <span class="ow">or</span> <span class="n">pd</span><span class="o">.</span><span class="n">isnull</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;long&#39;</span><span class="p">]):</span>
+        <span class="c1"># Intentar imputar con ciudad, barrio, y sector</span>
+        <span class="n">mask</span> <span class="o">=</span> <span class="p">(</span><span class="n">promedios_ciudad_barrio_sector</span><span class="p">[</span><span class="s1">&#39;ciudad&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;ciudad&#39;</span><span class="p">])</span> <span class="o">&amp;</span> \
+               <span class="p">(</span><span class="n">promedios_ciudad_barrio_sector</span><span class="p">[</span><span class="s1">&#39;barrio&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;barrio&#39;</span><span class="p">])</span> <span class="o">&amp;</span> \
+               <span class="p">(</span><span class="n">promedios_ciudad_barrio_sector</span><span class="p">[</span><span class="s1">&#39;Sector&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;Sector&#39;</span><span class="p">])</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="n">promedios_ciudad_barrio_sector</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">result</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+            <span class="n">row</span><span class="p">[</span><span class="s1">&#39;lat&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s1">&#39;lat&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">isnull</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;lat&#39;</span><span class="p">])</span> <span class="k">else</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;lat&#39;</span><span class="p">]</span>
+            <span class="n">row</span><span class="p">[</span><span class="s1">&#39;long&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s1">&#39;long&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">isnull</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;long&#39;</span><span class="p">])</span> <span class="k">else</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;long&#39;</span><span class="p">]</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="c1"># Intentar imputar con ciudad y barrio</span>
+            <span class="n">mask</span> <span class="o">=</span> <span class="p">(</span><span class="n">promedios_ciudad_barrio</span><span class="p">[</span><span class="s1">&#39;ciudad&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;ciudad&#39;</span><span class="p">])</span> <span class="o">&amp;</span> \
+                   <span class="p">(</span><span class="n">promedios_ciudad_barrio</span><span class="p">[</span><span class="s1">&#39;barrio&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;barrio&#39;</span><span class="p">])</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">promedios_ciudad_barrio</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">result</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+                <span class="n">row</span><span class="p">[</span><span class="s1">&#39;lat&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s1">&#39;lat&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">isnull</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;lat&#39;</span><span class="p">])</span> <span class="k">else</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;lat&#39;</span><span class="p">]</span>
+                <span class="n">row</span><span class="p">[</span><span class="s1">&#39;long&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s1">&#39;long&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">isnull</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;long&#39;</span><span class="p">])</span> <span class="k">else</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;long&#39;</span><span class="p">]</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># Intentar imputar solo con ciudad</span>
+                <span class="n">mask</span> <span class="o">=</span> <span class="p">(</span><span class="n">promedios_ciudad</span><span class="p">[</span><span class="s1">&#39;ciudad&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;ciudad&#39;</span><span class="p">])</span>
+                <span class="n">result</span> <span class="o">=</span> <span class="n">promedios_ciudad</span><span class="p">[</span><span class="n">mask</span><span class="p">]</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">result</span><span class="o">.</span><span class="n">empty</span><span class="p">:</span>
+                    <span class="n">row</span><span class="p">[</span><span class="s1">&#39;lat&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s1">&#39;lat&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">isnull</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;lat&#39;</span><span class="p">])</span> <span class="k">else</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;lat&#39;</span><span class="p">]</span>
+                    <span class="n">row</span><span class="p">[</span><span class="s1">&#39;long&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s1">&#39;long&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">if</span> <span class="n">pd</span><span class="o">.</span><span class="n">isnull</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;long&#39;</span><span class="p">])</span> <span class="k">else</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;long&#39;</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">row</span>
+
+<span class="c1"># Aplicar la función a cada fila del DataFrame</span>
+<span class="n">ventas</span> <span class="o">=</span> <span class="n">ventas</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">imputar_lat_long</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Eliminar filas donde &#39;lat&#39; o &#39;long&#39; tienen valores NaN (vacíos)</span>
+<span class="n">ventas</span> <span class="o">=</span> <span class="n">ventas</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;lat&#39;</span><span class="p">,</span> <span class="s1">&#39;long&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># DataFrame para el análisis de datos nulos incluyendo el porcentaje de datos únicos</span>
+<span class="n">analisis_nulos</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s1">&#39;Conteo&#39;</span><span class="p">:</span> <span class="n">ventas</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">(),</span>  <span class="c1"># Conteo de valores nulos</span>
+    <span class="s1">&#39;Porcentaje&#39;</span><span class="p">:</span> <span class="p">(</span><span class="n">ventas</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">ventas</span><span class="p">))</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span>  <span class="c1"># Porcentaje de valores nulos</span>
+    <span class="s1">&#39;Porcentaje_Unicos&#39;</span><span class="p">:</span> <span class="p">(</span><span class="n">ventas</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">ventas</span><span class="p">))</span> <span class="o">*</span> <span class="mi">100</span>  <span class="c1"># Porcentaje de valores únicos</span>
+<span class="p">})</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">analisis_nulos</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>                     Conteo  Porcentaje  Porcentaje_Unicos
+lat                       0    0.000000          48.153831
+long                      0    0.000000          26.973985
+category                  0    0.000000           0.001934
+price                     0    0.000000           2.585345
+rooms                     0    0.000000           2.490571
+baths                     0    0.000000           0.759486
+park                      0    0.000000           0.542213
+ciudad                    0    0.000000           0.004513
+barrio                    0    0.000000           3.043745
+area_privada              0    0.000000           3.953451
+area_const                0    0.000000           4.872828
+admon                     0    0.000000          36.580381
+Estrato                   0    0.000000           1.158570
+Estado                    0    0.000000           0.002579
+Antiguedad                0    0.000000           0.003868
+Piso No               42596   27.462687           0.010316
+Tipo de Apartamento       0    0.000000           0.005803
+Sector                    0    0.000000           0.597015
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Gráfico para el conteo de valores nulos con la paleta de colores especificada</span>
+<span class="n">colors</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;#F2C6AC&#39;</span><span class="p">,</span> <span class="s1">&#39;#1F3040&#39;</span><span class="p">,</span> <span class="s1">&#39;#B9CDCA&#39;</span><span class="p">,</span><span class="s1">&#39;#D99982&#39;</span><span class="p">,</span> <span class="s1">&#39;#735749&#39;</span><span class="p">]</span>  <span class="c1"># Definir la paleta de colores</span>
+<span class="n">fig_conteo</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">analisis_nulos</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">analisis_nulos</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="s1">&#39;Conteo&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Conteo de valores nulos por columna&#39;</span><span class="p">,</span>
+                    <span class="n">color_discrete_sequence</span><span class="o">=</span><span class="n">colors</span><span class="p">)</span>
+<span class="n">fig_conteo</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span><span class="n">xaxis_title</span><span class="o">=</span><span class="s1">&#39;Columnas&#39;</span><span class="p">,</span> <span class="n">yaxis_title</span><span class="o">=</span><span class="s1">&#39;Conteo de valores nulos&#39;</span><span class="p">,</span> <span class="n">xaxis_tickangle</span><span class="o">=-</span><span class="mi">45</span><span class="p">)</span>
+<span class="n">fig_conteo</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Gráfico para el porcentaje de valores nulos</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">go</span><span class="o">.</span><span class="n">Figure</span><span class="p">()</span>
+
+<span class="c1"># Agregar las barras para el porcentaje de valores nulos</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Bar</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="n">analisis_nulos</span><span class="o">.</span><span class="n">index</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="n">analisis_nulos</span><span class="p">[</span><span class="s1">&#39;Porcentaje&#39;</span><span class="p">],</span>
+    <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Porcentaje de Nulos&#39;</span><span class="p">,</span>
+    <span class="n">marker_color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># Asignar el primer color de la paleta</span>
+<span class="p">))</span>
+
+<span class="c1"># Agregar una línea para el porcentaje de datos únicos</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">add_trace</span><span class="p">(</span><span class="n">go</span><span class="o">.</span><span class="n">Scatter</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="n">analisis_nulos</span><span class="o">.</span><span class="n">index</span><span class="p">,</span>
+    <span class="n">y</span><span class="o">=</span><span class="n">analisis_nulos</span><span class="p">[</span><span class="s1">&#39;Porcentaje_Unicos&#39;</span><span class="p">],</span>
+    <span class="n">name</span><span class="o">=</span><span class="s1">&#39;Porcentaje de Datos Únicos&#39;</span><span class="p">,</span>
+    <span class="n">mode</span><span class="o">=</span><span class="s1">&#39;lines+markers&#39;</span><span class="p">,</span>
+    <span class="n">line</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span>  <span class="c1"># Asignar el segundo color de la paleta</span>
+    <span class="n">marker</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="n">colors</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>  <span class="c1"># Usar otro color para los marcadores</span>
+<span class="p">))</span>
+
+<span class="c1"># Actualizar el layout para incluir título y nombres de ejes</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">update_layout</span><span class="p">(</span>
+    <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Porcentaje de valores nulos y únicos por columna&#39;</span><span class="p">,</span>
+    <span class="n">xaxis_title</span><span class="o">=</span><span class="s1">&#39;Columnas&#39;</span><span class="p">,</span>
+    <span class="n">yaxis_title</span><span class="o">=</span><span class="s1">&#39;Porcentaje (%)&#39;</span><span class="p">,</span>
+    <span class="n">xaxis_tickangle</span><span class="o">=-</span><span class="mi">45</span><span class="p">,</span>
+    <span class="n">yaxis</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+        <span class="n">title</span><span class="o">=</span><span class="s1">&#39;Porcentaje (%)&#39;</span><span class="p">,</span>
+        <span class="n">titlefont_size</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span>
+        <span class="n">tickfont_size</span><span class="o">=</span><span class="mi">14</span><span class="p">,</span>
+    <span class="p">),</span>
+    <span class="n">legend</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span>
+        <span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+        <span class="n">y</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
+    <span class="p">)</span>
+<span class="p">)</span>
+
+<span class="c1"># Mostrar el gráfico</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Mapa de calor de datos faltantes</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">6</span><span class="p">))</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">ventas</span><span class="o">.</span><span class="n">isnull</span><span class="p">(),</span> <span class="n">cbar</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="n">custom_colors</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Mapa de calor de datos faltantes&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">rotation</span><span class="o">=</span><span class="mi">45</span><span class="p">,</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/ca45442dc227d2485fbab5fb31518d714da10dd2d3b1752e3a459e3b06e1839a.png" src="_images/ca45442dc227d2485fbab5fb31518d714da10dd2d3b1752e3a459e3b06e1839a.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Reemplazar valores menores a 0 en admon</span>
+<span class="n">ventas</span><span class="p">[</span><span class="s1">&#39;admon&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ventas</span><span class="p">[</span><span class="s1">&#39;admon&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi">0</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Reemplazar valores mayores a 6 en estrato</span>
+<span class="n">ventas</span><span class="p">[</span><span class="s1">&#39;Estrato&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ventas</span><span class="p">[</span><span class="s1">&#39;Estrato&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi">6</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">6</span> <span class="k">else</span> <span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ventas</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span><span class="o">.</span><span class="n">T</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>count</th>
+      <th>mean</th>
+      <th>std</th>
+      <th>min</th>
+      <th>25%</th>
+      <th>50%</th>
+      <th>75%</th>
+      <th>max</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>lat</th>
+      <td>155105.0</td>
+      <td>5.652091e+00</td>
+      <td>2.204566e+00</td>
+      <td>3.254000e+00</td>
+      <td>4.648077e+00</td>
+      <td>4.721532e+00</td>
+      <td>6.210060e+00</td>
+      <td>1.104366e+01</td>
+    </tr>
+    <tr>
+      <th>long</th>
+      <td>155105.0</td>
+      <td>-7.487562e+01</td>
+      <td>8.883420e-01</td>
+      <td>-7.657500e+01</td>
+      <td>-7.557198e+01</td>
+      <td>-7.420027e+01</td>
+      <td>-7.406731e+01</td>
+      <td>-7.396190e+01</td>
+    </tr>
+    <tr>
+      <th>price</th>
+      <td>155105.0</td>
+      <td>4.984872e+08</td>
+      <td>4.051956e+08</td>
+      <td>2.000000e+06</td>
+      <td>2.400000e+08</td>
+      <td>3.750000e+08</td>
+      <td>6.000000e+08</td>
+      <td>4.900000e+09</td>
+    </tr>
+    <tr>
+      <th>rooms</th>
+      <td>155105.0</td>
+      <td>3.016952e+00</td>
+      <td>1.046944e+00</td>
+      <td>1.000000e+00</td>
+      <td>2.785714e+00</td>
+      <td>3.000000e+00</td>
+      <td>3.000000e+00</td>
+      <td>7.676206e+00</td>
+    </tr>
+    <tr>
+      <th>baths</th>
+      <td>155105.0</td>
+      <td>2.563615e+00</td>
+      <td>1.120647e+00</td>
+      <td>8.593324e-01</td>
+      <td>2.000000e+00</td>
+      <td>2.000000e+00</td>
+      <td>3.000000e+00</td>
+      <td>7.000000e+00</td>
+    </tr>
+    <tr>
+      <th>park</th>
+      <td>155105.0</td>
+      <td>1.185103e+00</td>
+      <td>9.402160e-01</td>
+      <td>-9.909311e-02</td>
+      <td>1.000000e+00</td>
+      <td>1.000000e+00</td>
+      <td>2.000000e+00</td>
+      <td>5.000000e+00</td>
+    </tr>
+    <tr>
+      <th>area_privada</th>
+      <td>155105.0</td>
+      <td>1.114881e+02</td>
+      <td>6.199171e+01</td>
+      <td>1.000000e+00</td>
+      <td>6.500000e+01</td>
+      <td>9.400000e+01</td>
+      <td>1.390000e+02</td>
+      <td>3.250000e+02</td>
+    </tr>
+    <tr>
+      <th>area_const</th>
+      <td>155105.0</td>
+      <td>1.139092e+02</td>
+      <td>6.337710e+01</td>
+      <td>1.000000e+00</td>
+      <td>6.600000e+01</td>
+      <td>9.600000e+01</td>
+      <td>1.440000e+02</td>
+      <td>3.319651e+02</td>
+    </tr>
+    <tr>
+      <th>admon</th>
+      <td>155105.0</td>
+      <td>3.498544e+05</td>
+      <td>2.571560e+05</td>
+      <td>0.000000e+00</td>
+      <td>1.600000e+05</td>
+      <td>2.840000e+05</td>
+      <td>4.790000e+05</td>
+      <td>2.118338e+06</td>
+    </tr>
+    <tr>
+      <th>Estrato</th>
+      <td>155105.0</td>
+      <td>4.359208e+00</td>
+      <td>1.265917e+00</td>
+      <td>1.000000e+00</td>
+      <td>3.000000e+00</td>
+      <td>4.000000e+00</td>
+      <td>6.000000e+00</td>
+      <td>6.000000e+00</td>
+    </tr>
+    <tr>
+      <th>Piso No</th>
+      <td>112509.0</td>
+      <td>3.753531e+00</td>
+      <td>3.098129e+00</td>
+      <td>1.000000e+00</td>
+      <td>1.000000e+00</td>
+      <td>3.000000e+00</td>
+      <td>5.000000e+00</td>
+      <td>1.600000e+01</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "psqlpy_venv"
+        },
+        kernelOptions: {
+            name: "psqlpy_venv",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'psqlpy_venv'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="notebooks1.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Análisis de datos atípicos</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="notebookeda.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">EDA</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imputacion-eliminacion-de-datos-nulos">Imputación/eliminación de datos nulos</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#eliminacion">Eliminación:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#imputacion-de-acuerdo-con-otras-columnas">Imputación de acuerdo con otras columnas:</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#imputacion-de-acuerdo-con-la-misma-columna">Imputación de acuerdo con la misma columna:</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imputacion-usando-iterativeimputer">Imputación usando IterativeImputer</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#imputacion-datos-referentes-a-locacion">Imputación datos referentes a locación</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Buvoli Gina - Herrera Linda
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
