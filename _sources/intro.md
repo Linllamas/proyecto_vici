@@ -6,11 +6,8 @@ En HEBO, estamos comprometidos a brindarte una experiencia inmobiliaria única y
 
 Nuestra última iniciativa, una aplicación innovadora, busca revolucionar la forma en que buscas y vendes propiedades en todo el país. Esta aplicación no solo te permite explorar una amplia gama de viviendas en venta en diferentes ciudades colombianas, sino que también te ofrece la oportunidad de vender tu propia propiedad de manera eficiente. Con la integración de diversos modelos de machine learning, nuestra aplicación proporcionaestimaciones precisas del precio de venta ayudándote a tomar decisiones informadas.
 
-Desde casas amplias hasta apartamentos modernos, nuestro extenso conjunto de datos incluye una variedad de variables clave, como ubicación geográfica, características de la propiedad y precios actualizados. ¡Únete a nosotros en esta emocionante aventura y encuentra el lugar perfecto para llamar hogar en Colombia!
+Desde casas amplias hasta apartamentos modernos, nuestro extenso conjunto de datos incluye una variedad de variables clave, como ubicación geográfica, características de la propiedad y precios actualizados. ¡Únete a nosotros en esta emocionante aventura y encuentra el lugar perfecto para llamar hogar en Colombia! (Link)[https://hebo-inmobiliaria.onrender.com] 
 
-**Link**
-
-**Link**
 
 ```{tableofcontents}
 ```
